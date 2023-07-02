@@ -10,13 +10,7 @@ print('| | | | (_| | | | | (_| | | | | | | (_| | | | |')
 print('|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|')
 print('                    __/ |')
 print('                   |___/')
-print('          +--------------------------+')
-print('          |                          |')
-print('          |       Play Game: 1       |')
-print('          |                          |')
-print('          |       Game Rules: 2      |')
-print('          |                          |')
-print('          +--------------------------+\n')
+
 
 def start_menu():
     """
@@ -25,6 +19,14 @@ def start_menu():
     the terminal, which must be 1 or 2. The loop will repeatedly 
     request data until it is valid.
     """
+    print('          +--------------------------+')
+    print('          |                          |')
+    print('          |       Play Game: 1       |')
+    print('          |                          |')
+    print('          |       Game Rules: 2      |')
+    print('          |                          |')
+    print('          +--------------------------+\n')
+
     while True:
         selected_menu_option = input("          Please select an option: ")
         if selected_menu_option == '1':
