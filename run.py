@@ -41,9 +41,14 @@ def start_menu():
 
 
 def validate_menu_selection(user_input):
+    """
+    Inside the try, converts start_menu input to an integer.
+    Raises ValueError if the value is greater than 2 or if
+    the string cannot be converted into an int.
+    """
     try:
         int_user_input = int(user_input)
-        if int_user_input >= 3:
+        if int_user_input > 2:
             raise ValueError(
                 f"Please enter a number provided, '{user_input}' is not an option."
             )
