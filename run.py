@@ -39,5 +39,19 @@ def start_menu():
             print()
             validate_menu_selection(selected_menu_option)
 
+
+def validate_menu_selection(user_input):
+    try:
+        int_user_input = int(user_input)
+        if int_user_input >= 3:
+            raise ValueError(
+                f"Please enter a number provided, '{user_input}' is not an option."
+            )
+    except ValueError as e:
+        print(f"Invalid selection: {e}, please try again.\n")
+        return False
+    
+    return True
+
 start_menu()
 
