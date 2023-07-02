@@ -1,4 +1,5 @@
 import random
+import os
 from words import word_list
 
 
@@ -30,11 +31,13 @@ def start_menu():
     while True:
         selected_menu_option = input("          Please select an option: ")
         if selected_menu_option == '1':
-            # difficulty_selection()
+            os.system('clear')
+            difficulty_selection()
             print('start game selected')
             return False
         elif selected_menu_option == '2':
             # show_game_rules()
+            os.system('clear')
             print('game rules selected')
             return False
         else:
@@ -59,6 +62,7 @@ def validate_menu_selection(user_input):
         return False
     
     return True
+
 
 start_menu()
 
