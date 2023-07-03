@@ -63,6 +63,16 @@ def validate_menu_selection(user_input):
     
     return True
 
-
-start_menu()
+def difficulty_selection():
+    print('          +---------------------------+')
+    print('          |  *** Difficulty Menu ***  |')
+    print('          +---------------------------+')
+    print('          |                           |')
+    print('          |           Easy: 1         |')
+    print('          |                           |')
+    print('          |          Medium: 2        |')
+    print('          |                           |')
+    print('          |           Hard: 3         |')
+    print('          |                           |')
+    print('          +--------------------------+\n')
 
