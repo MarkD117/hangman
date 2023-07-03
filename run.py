@@ -93,3 +93,7 @@ def difficulty_selection():
         else:
             print()
             validate_menu_selection(selected_difficulty_option)
+
+def select_word():
+    selected_word = random.choice(word_list)
+    return selected_word.upper()
