@@ -21,6 +21,8 @@ def start_menu():
     request data until it is valid.
     """
     print('          +--------------------------+')
+    print('          |    *** START MENU ***    |')
+    print('          +--------------------------+')
     print('          |                          |')
     print('          |       Play Game: 1       |')
     print('          |                          |')
@@ -65,7 +67,7 @@ def validate_menu_selection(user_input):
 
 def difficulty_selection():
     print('          +---------------------------+')
-    print('          |  *** Difficulty Menu ***  |')
+    print('          |  *** DIFFICULTY MENU ***  |')
     print('          +---------------------------+')
     print('          |                           |')
     print('          |           Easy: 1         |')
