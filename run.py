@@ -76,3 +76,20 @@ def difficulty_selection():
     print('          |                           |')
     print('          +--------------------------+\n')
 
+    while True:
+        selected_difficulty_option = input("          Please select an option: ")
+        if selected_difficulty_option == '1':
+            os.system('clear')
+            print('easy mode selected')
+            return False
+        elif selected_difficulty_option == '2':
+            os.system('clear')
+            print('medium mode selected')
+            return False
+        elif selected_difficulty_option == '3':
+            os.system('clear')
+            print('hard mode selected')
+            return False
+        else:
+            print()
+            validate_menu_selection(selected_difficulty_option)
