@@ -97,3 +97,60 @@ def difficulty_selection():
 def select_word():
     selected_word = random.choice(word_list)
     return selected_word.upper()
+
+
+
+
+def display_hangman(attempt_count):
+    hangman_stage = ['''
+  +-----+
+  |     |
+  |     O
+  |    /|\\
+  |    / \\
+  |
+=========''', '''
+  +-----+
+  |     |
+  |     O
+  |    /|\\
+  |    /
+  |
+=========''', '''
+  +-----+
+  |     |
+  |     O
+  |    /|\\
+  |
+  |
+=========''', '''
+  +-----+
+  |     |
+  |     O
+  |    /|
+  |
+  |
+=========''', '''
+  +-----+
+  |     |
+  |     O
+  |     |
+  |
+  |
+=========''', '''
+  +-----+
+  |     |
+  |     O
+  |
+  |
+  |
+=========''', '''
+  +-----+
+  |     |
+  |   
+  |
+  |
+  |
+=========''']
+
+    return hangman_stage[attempt_count]
