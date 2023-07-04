@@ -153,7 +153,15 @@ def play_game(word):
                 guessed = True
                 hidden_word = word
         else:
-
+            os.system('clear')
+            print('Invalid guess. Please try again!')
+        print(display_hangman(attempt_count))
+        print(hidden_word)
+        print('\n')
+        print(f"Guessed letters: {letters_guessed}")
+        print('\n')
+        print(f"Guessed words: {words_guessed}")
+        print('\n')
     
 
 
