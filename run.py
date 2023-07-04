@@ -244,3 +244,12 @@ def end_game():
             play_game(word)
         else:
             print('Please select a valid option!')
+
+
+def main():
+    start_menu()
+    word = select_word()
+    play_game(word)
+    end_game()
+
+main()
