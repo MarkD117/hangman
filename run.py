@@ -118,6 +118,15 @@ def play_game(word):
     while not guessed and attempt_count > 0:
         user_guess = input("Please guess a letter or word: ").upper()
         if len(user_guess) == 1 and user_guess.isalpha():
+            if user_guess in letters_guessed:
+                print(f"you have already guessed {user_guess}. Please try again!")
+            elif user_guess not in word:
+                print(f"'{user_guess}' is not in this word. Please try again!")
+                attempt_count -= 1
+                letters_guessed.append(user_guess)
+            else:
+                print(f"Well done! {user_guess} is in the word!")
+                letters_guessed.append(user_guess)
 
         elif len(user_guess) == len(word) and user_guess.isalpha():
             
