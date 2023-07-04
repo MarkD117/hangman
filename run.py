@@ -162,7 +162,18 @@ def play_game(word):
         print('\n')
         print(f"Guessed words: {words_guessed}")
         print('\n')
-    
+    if guessed:
+        os.system('clear')
+        print(display_hangman(attempt_count))
+        print(hidden_word)
+        print('\n')
+        print(f"Guessed letters: {letters_guessed}")
+        print('\n')
+        print(f"Guessed words: {words_guessed}")
+        print('\n')
+        print("Congratulations, you guessed the correct word!")
+    else:
+        print(f"You ran out of attempts. The word was {word}. Try again next time!")
 
 
 def display_hangman(attempt_count):
