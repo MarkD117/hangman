@@ -119,15 +119,18 @@ def play_game(word):
         user_guess = input("Please guess a letter or word: ").upper()
         if len(user_guess) == 1 and user_guess.isalpha():
             if user_guess in letters_guessed:
+                os.system('clear')
                 print(f"you have already guessed {user_guess}. Please try again!")
             elif user_guess not in word:
+                os.system('clear')
                 print(f"'{user_guess}' is not in this word. Please try again!")
                 attempt_count -= 1
                 letters_guessed.append(user_guess)
             else:
+                os.system('clear')
                 print(f"Well done! {user_guess} is in the word!")
                 letters_guessed.append(user_guess)
-
+                
         elif len(user_guess) == len(word) and user_guess.isalpha():
             
         else:
