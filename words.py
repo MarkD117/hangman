@@ -1050,5 +1050,5 @@ word_list = [ 'mist',
 'zoom']
 
 # Code used to format list onto separate lines
-# for i in word_list:
-#     print(f"'{i}',")
+for i in word_list:
+    print(f"'{i}',")

@@ -101,6 +101,19 @@ def select_word():
     return selected_word.upper()
 
 
+def play_game(word):
+    hidden_word = "_" * len(word)
+    guessed = False
+    letters_guessed = []
+    words_guessed = []
+    attempt_count = 6
+    print(display_hangman(attempt_count))
+    print(hidden_word)
+    print('\n')
+    print(f"Guessed letters: {letters_guessed}")
+    print('\n')
+    print(f"Guessed words: {words_guessed}")
+    print('\n')
 
 
 def display_hangman(attempt_count):
