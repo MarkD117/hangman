@@ -115,6 +115,16 @@ def play_game(word):
     print(f"Guessed words: {words_guessed}")
     print('\n')
 
+    while not guessed and attempt_count > 0:
+        user_guess = input("Please guess a letter or word: ").upper()
+        if len(user_guess) == 1 and user_guess.isalpha():
+
+        elif len(user_guess) == len(word) and user_guess.isalpha():
+            
+        else:
+
+    
+
 
 def display_hangman(attempt_count):
     hangman_stage = ['''
