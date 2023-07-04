@@ -131,6 +131,15 @@ def play_game(word):
                 print(f"Well done! {user_guess} is in the word!")
                 letters_guessed.append(user_guess)
                 
+                # Replacing letters in the hidden word
+                hidden_word_as_list = list(hidden_word)
+                indices = [i for i, letter in enumerate(word) if letter == user_guess]
+                for index in indices:
+                    hidden_word_as_list[index] = user_guess
+                hidden_word = "".join(hidden_word_as_list)
+                if "_" not in hidden_word:
+                    guessed = True
+
         elif len(user_guess) == len(word) and user_guess.isalpha():
             
         else:
