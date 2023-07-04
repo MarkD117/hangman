@@ -96,6 +96,7 @@ def difficulty_selection():
             print()
             validate_menu_selection(selected_difficulty_option)
 
+
 def select_word():
     selected_word = random.choice(word_list)
     return selected_word.upper()
@@ -229,3 +230,17 @@ def display_hangman(attempt_count):
 =========''']
 
     return hangman_stage[attempt_count]
+
+def end_game():
+    word = select_word()
+    while True:
+        end_game_input = input("Play Again? (Y/N): ").upper()
+        if end_game_input == "Y":
+            os.system('clear')
+            play_game(word)
+        elif end_game_input == "N":
+            os.system('clear')
+            start_menu()
+            play_game(word)
+        else:
+            print('Please select a valid option!')
