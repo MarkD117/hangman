@@ -141,7 +141,17 @@ def play_game(word):
                     guessed = True
 
         elif len(user_guess) == len(word) and user_guess.isalpha():
-            
+            if user_guess in words_guessed:
+                os.system('clear')
+                print(f"You have already guessed {user_guess}. Please try again!")
+            elif user_guess != word:
+                os.system('clear')
+                print(f"{user_guess} is not the correct word!")
+                attempt_count -= 1
+                words_guessed.append(user_guess)
+            else:
+                guessed = True
+                hidden_word = word
         else:
 
     
