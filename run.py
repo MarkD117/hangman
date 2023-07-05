@@ -119,6 +119,18 @@ def display_game_rules():
     print('          |                                                    |')
     print('          +----------------------------------------------------+\n')
 
+    while True:
+        selected_rules_menu_option = input("          Press Enter to return to Start Menu...")
+        if selected_rules_menu_option == '':
+            os.system('clear')
+            start_menu()
+            return False
+        else:
+            print()
+            print("          Invalid input! Please try again!")
+            print()
+
+
 def select_word():
     selected_word = random.choice(word_list)
     return selected_word.upper()
