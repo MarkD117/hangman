@@ -1060,16 +1060,16 @@ primary_word_list = [ 'mist',
 
 #list of 376 easy words
 easy_words_list = [word for word in primary_word_list if len(word) < 5]
-print(easy_words_list)
-print(len(easy_words_list))
+# print(easy_words_list)
+# print(len(easy_words_list))
 
 #list of 457 medium words
 medium_words_list = [word for word in primary_word_list if len(word) > 4 and len(word) < 7]
-print(medium_words_list)
-print(len(medium_words_list))
+# print(medium_words_list)
+# print(len(medium_words_list))
 
 #list of 217 hard words
 hard_words_list = [word for word in primary_word_list if len(word) > 6]
-print(hard_words_list)
-print(len(hard_words_list))
+# print(hard_words_list)
+# print(len(hard_words_list))
 

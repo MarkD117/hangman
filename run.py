@@ -1,6 +1,6 @@
 import random
 import os
-from words import word_list
+from words import easy_words_list, medium_words_list, hard_words_list
 
 
 print(' _')
