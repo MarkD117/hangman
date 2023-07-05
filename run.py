@@ -35,12 +35,10 @@ def start_menu():
         if selected_menu_option == '1':
             os.system('clear')
             difficulty_selection()
-            print('start game selected')
             return False
         elif selected_menu_option == '2':
-            # show_game_rules()
             os.system('clear')
-            print('game rules selected')
+            display_game_rules()
             return False
         else:
             print()
@@ -76,7 +74,7 @@ def difficulty_selection():
     print('          |                           |')
     print('          |           Hard: 3         |')
     print('          |                           |')
-    print('          +--------------------------+\n')
+    print('          +---------------------------+\n')
 
     while True:
         selected_difficulty_option = input("          Please select an option: ")
@@ -96,6 +94,30 @@ def difficulty_selection():
             print()
             validate_menu_selection(selected_difficulty_option)
 
+
+def display_game_rules():
+    print('          +----------------------------------------------------+')
+    print('          |                 *** RULES MENU ***                 |')
+    print('          +----------------------------------------------------+')
+    print('          |                                                    |')
+    print('          |  - You will have 6 tries to guess the chosen word. |')
+    print('          |                                                    |')
+    print('          |  - You may guess single letters or you can try to  |')
+    print('          |    guess the full word,                            |')
+    print('          |                                                    |')
+    print('          |  - Each will be counted as a guess!                |')
+    print('          |                                                    |')
+    print('          |  - Upon each correct guess, the hidden word will   |')
+    print('          |    start to appear.                                |')
+    print('          |                                                    |')
+    print('          |  - Guess all of the letters or guess the word,     |')
+    print('          |    and you will win the game.                      |')
+    print('          |                                                    |')
+    print('          |  - Run out of attempts, and the man will hang!     |')
+    print('          |                                                    |')
+    print('          |  - Best of luck, and watch your neck!              |')
+    print('          |                                                    |')
+    print('          +----------------------------------------------------+\n')
 
 def select_word():
     selected_word = random.choice(word_list)
