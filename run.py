@@ -102,6 +102,30 @@ def select_word():
     return selected_word.upper()
 
 
+# def display_hidden_word(hidden_word):
+#     for i in hidden_word:
+#         print("_", end = " ")
+
+# def display_hidden_word(hidden_word):
+#     hidden_word = "_" * len(select_word())
+#     for i in hidden_word:
+#         print("_", end = " ")
+
+# def reveal_hidden_word(guessed_letters):
+#     counter = 0
+#     for char in select_word():
+#         if(char in guessed_letters):
+#             print(select_word()[counter], end = " ")
+#         else:
+#             print(" ", end = " ")
+#         counter += 1
+
+# def printLines():
+#   print("\r")
+#   for char in randomWord:
+#     print("\u203E", end=" ")
+
+
 def play_game(word):
     hidden_word = "_" * len(word)
     guessed = False
