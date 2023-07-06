@@ -58,8 +58,8 @@ def validate_menu_selection(user_input):
             raise ValueError(
                 f"Please enter a number provided, '{user_input}' is not an option."
             )
-    except ValueError as e:
-        print(f"Invalid selection: {e}, please try again.\n")
+    except ValueError:
+        print(f"Invalid selection, please try again by choosing a number.\n")
         return False
     
     return True
