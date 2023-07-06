@@ -2,6 +2,7 @@ import random
 import os
 from words import easy_words_list, medium_words_list, hard_words_list
 
+selected_word_difficulty = []
 
 print(' _')
 print('| |')
@@ -36,7 +37,7 @@ def start_menu():
             os.system('clear')
             difficulty_selection()
             return False
-        elif selected_menu_option == '2':
+        elif selected_menu_option == '2':  
             os.system('clear')
             display_game_rules()
             return False
@@ -64,6 +65,7 @@ def validate_menu_selection(user_input):
     return True
 
 def difficulty_selection():
+    global selected_word_difficulty
     print('          +---------------------------+')
     print('          |  *** DIFFICULTY MENU ***  |')
     print('          +---------------------------+')
@@ -80,15 +82,15 @@ def difficulty_selection():
         selected_difficulty_option = input("          Please select an option: ")
         if selected_difficulty_option == '1':
             os.system('clear')
-            print('easy mode selected')
+            selected_word_difficulty = easy_words_list
             return False
         elif selected_difficulty_option == '2':
             os.system('clear')
-            print('medium mode selected')
+            selected_word_difficulty = medium_words_list
             return False
         elif selected_difficulty_option == '3':
             os.system('clear')
-            print('hard mode selected')
+            selected_word_difficulty = hard_words_list
             return False
         else:
             print()
@@ -127,12 +129,10 @@ def display_game_rules():
             return False
         else:
             print()
-            print("          Invalid input! Please try again!")
-            print()
+            print("          Invalid input!")
 
-
-def select_word():
-    selected_word = random.choice(word_list)
+def select_word(chosen_list):
+    selected_word = random.choice(chosen_list)
     return selected_word.upper()
 
 
@@ -290,7 +290,7 @@ def display_hangman(attempt_count):
     return hangman_stage[attempt_count]
 
 def end_game():
-    word = select_word()
+    word = select_word(selected_word_difficulty)
     while True:
         end_game_input = input("Play Again? (Y/N): ").upper()
         if end_game_input == "Y":
@@ -305,9 +305,14 @@ def end_game():
 
 
 def main():
+    global selected_word_difficulty
     start_menu()
-    word = select_word()
+    word = select_word(selected_word_difficulty)
     play_game(word)
     end_game()
 
 main()
+
+
+
+
