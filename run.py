@@ -83,6 +83,8 @@ def difficulty_selection():
     print('          |                           |')
     print('          |           Hard: 3         |')
     print('          |                           |')
+    print('          |        Start Menu: 4      |')
+    print('          |                           |')
     print('          +---------------------------+\n')
 
     while True:
@@ -98,6 +100,10 @@ def difficulty_selection():
         elif selected_difficulty_option == '3':
             os.system('clear')
             selected_word_difficulty = hard_words_list
+            return False
+        elif selected_difficulty_option == '4':
+            os.system('clear')
+            start_menu()
             return False
         else:
             print()
