@@ -55,7 +55,7 @@ def validate_menu_selection(user_input):
     try:
         int_user_input = int(user_input)
         if int_user_input > 2:
-            raise ValueError(
+            print(
                 f"Please enter a number provided, '{user_input}' is not an option."
             )
     except ValueError:
