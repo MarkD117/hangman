@@ -31,6 +31,8 @@ def start_menu():
     print('          |                          |')
     print('          |       Game Rules: 2      |')
     print('          |                          |')
+    print('          |       Exit Game: 3       |')
+    print('          |                          |')
     print('          +--------------------------+\n')
 
     while True:
@@ -42,6 +44,9 @@ def start_menu():
         elif selected_menu_option == '2':  
             os.system('clear')
             display_game_rules()
+            return False
+        elif selected_menu_option == '3':  
+            exit()
             return False
         else:
             print()
