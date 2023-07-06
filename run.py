@@ -161,7 +161,7 @@ def select_word(chosen_list):
 
 
 def play_game(word):
-    hidden_word = "_" * len(word)
+    hidden_word = " ".join("_" * len(word))
     guessed = False
     letters_guessed = []
     words_guessed = []
@@ -194,7 +194,7 @@ def play_game(word):
                 hidden_word_as_list = list(hidden_word)
                 indices = [i for i, letter in enumerate(word) if letter == user_guess]
                 for index in indices:
-                    hidden_word_as_list[index] = user_guess
+                    hidden_word_as_list[index * 2] = user_guess
                 hidden_word = "".join(hidden_word_as_list)
                 if "_" not in hidden_word:
                     guessed = True
