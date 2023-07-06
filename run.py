@@ -4,14 +4,15 @@ from words import easy_words_list, medium_words_list, hard_words_list
 
 selected_word_difficulty = []
 
-print(' _')
-print('| |')
-print('| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __')
-print("| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ ")
-print('| | | | (_| | | | | (_| | | | | | | (_| | | | |')
-print('|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|')
-print('                    __/ |')
-print('                   |___/')
+def print_main_logo():
+    print(' _')
+    print('| |')
+    print('| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __')
+    print("| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ ")
+    print('| | | | (_| | | | | (_| | | | | | | (_| | | | |')
+    print('|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|')
+    print('                    __/ |')
+    print('                   |___/')
 
 
 def start_menu():
@@ -21,6 +22,7 @@ def start_menu():
     the terminal, which must be 1 or 2. The loop will repeatedly 
     request data until it is valid.
     """
+    print_main_logo()
     print('          +--------------------------+')
     print('          |    *** START MENU ***    |')
     print('          +--------------------------+')
