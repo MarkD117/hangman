@@ -63,7 +63,7 @@ def validate_menu_selection(user_input):
         int_user_input = int(user_input)
         if int_user_input > 3:
             print(
-                f"Please enter a number provided, '{user_input}' is not an option."
+                f"Please enter a number provided, '{user_input}' is not an option.\n"
             )
     except ValueError:
         print(f"Invalid selection, please try again by choosing a number.\n")
@@ -168,7 +168,7 @@ def play_game(word):
         if len(user_guess) == 1 and user_guess.isalpha():
             if user_guess in letters_guessed:
                 os.system('clear')
-                print(f"you have already guessed {user_guess}. Please try again!")
+                print(f"You have already guessed {user_guess}. Please try again!")
             elif user_guess not in word:
                 os.system('clear')
                 print(f"'{user_guess}' is not in this word. Please try again!")
