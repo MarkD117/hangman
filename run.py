@@ -211,9 +211,17 @@ def play_game(word):
         display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
     if guessed:
         os.system('clear')
-        display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
+        display_game_over()
+        print(' ')
+        display_win()
+        print()
         print("Congratulations, you guessed the correct word!")
     else:
+        os.system('clear')
+        display_game_over()
+        print(' ')
+        display_lose()
+        print()
         print(f"You ran out of attempts. The word was {word}. Try again next time!")
 
 def display_hangman(attempt_count):
@@ -284,19 +292,6 @@ def end_game():
         else:
             print('Please select a valid option!')
 
-
-def main():
-    global selected_word_difficulty
-    start_menu()
-    word = select_word(selected_word_difficulty)
-    play_game(word)
-    end_game()
-
-# main()
-
-
-
-
 def display_game_over():
     print('██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗')
     print('██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗')
@@ -320,3 +315,14 @@ def display_win():
     print("  ╚██╔╝  ██║   ██║██║   ██║    ██║███╗██║██║██║╚██╗██║")
     print("   ██║   ╚██████╔╝╚██████╔╝    ╚███╔███╔╝██║██║ ╚████║")
     print("   ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝")
+
+def main():
+    global selected_word_difficulty
+    start_menu()
+    word = select_word(selected_word_difficulty)
+    play_game(word)
+    end_game()
+
+main()
+
+
