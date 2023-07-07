@@ -9,12 +9,12 @@ selected_word_difficulty = []
 
 def print_main_logo():
     print()
-    print(f"       {Fore.YELLOW}██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗")
-    print(f"       {Fore.YELLOW}██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║")
-    print(f"       {Fore.YELLOW}███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║")
-    print(f"       {Fore.YELLOW}██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║")
-    print(f"       {Fore.YELLOW}██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║")
-    print(f"       {Fore.YELLOW}╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝")
+    print(f"       {Style.BRIGHT}{Fore.YELLOW}██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗")
+    print(f"       {Style.BRIGHT}{Fore.YELLOW}██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║")
+    print(f"       {Style.BRIGHT}{Fore.YELLOW}███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║")
+    print(f"       {Style.BRIGHT}{Fore.YELLOW}██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║")
+    print(f"       {Style.BRIGHT}{Fore.YELLOW}██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║")
+    print(f"       {Style.BRIGHT}{Fore.YELLOW}╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝")
     print()
 
 
@@ -148,7 +148,8 @@ def display_game_rules():
             return False
         else:
             print()
-            print(f"          {Fore.RED}Invalid input!")
+            print(f"                                {Fore.RED}Invalid input!")
+            print()
 
 def select_word(chosen_list):
     selected_word = random.choice(chosen_list)
