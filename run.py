@@ -9,12 +9,12 @@ selected_word_difficulty = []
 
 def print_main_logo():
     print()
-    print("       ██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗")
-    print("       ██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║")
-    print("       ███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║")
-    print("       ██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║")
-    print("       ██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║")
-    print("       ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝")
+    print(f"       {Fore.YELLOW}██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗")
+    print(f"       {Fore.YELLOW}██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║")
+    print(f"       {Fore.YELLOW}███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║")
+    print(f"       {Fore.YELLOW}██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║")
+    print(f"       {Fore.YELLOW}██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║")
+    print(f"       {Fore.YELLOW}╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝")
     print()
 
 
@@ -26,17 +26,17 @@ def start_menu():
     request data until it is valid.
     """
     print_main_logo()
-    print('                         +--------------------------+')
-    print('                         |    *** START MENU ***    |')
-    print('                         +--------------------------+')
-    print('                         |                          |')
-    print('                         |       Play Game: 1       |')
-    print('                         |                          |')
-    print('                         |       Game Rules: 2      |')
-    print('                         |                          |')
-    print('                         |       Exit Game: 3       |')
-    print('                         |                          |')
-    print('                         +--------------------------+\n')
+    print(f'                         {Fore.YELLOW}+--------------------------+')
+    print(f'                         {Fore.YELLOW}|    {Fore.RESET}*** START MENU ***    {Fore.YELLOW}|')
+    print(f'                         {Fore.YELLOW}+--------------------------+')
+    print(f'                         {Fore.YELLOW}|                          |')
+    print(f'                         {Fore.YELLOW}|       {Fore.RESET}Play Game: 1       {Fore.YELLOW}|')
+    print(f'                         {Fore.YELLOW}|                          |')
+    print(f'                         {Fore.YELLOW}|       {Fore.RESET}Game Rules: 2      {Fore.YELLOW}|')
+    print(f'                         {Fore.YELLOW}|                          |')
+    print(f'                         {Fore.YELLOW}|       {Fore.RESET}Exit Game: 3       {Fore.YELLOW}|')
+    print(f'                         {Fore.YELLOW}|                          |')
+    print(f'                         {Fore.YELLOW}+--------------------------+\n')
 
     while True:
         selected_menu_option = input("                         Please select an option: ")
@@ -225,14 +225,14 @@ def play_game(word):
         display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
     if guessed:
         os.system('clear')
-        display_game_over()
+        display_game_over_win()
         print(' ')
         display_win()
         print()
-        print(f"      Congratulations, you guessed the correct word! The word was {word}.")
+        print(f"      {Fore.GREEN}Congratulations, you guessed the correct word! The word was {word}.")
     else:
         os.system('clear')
-        display_game_over()
+        display_game_over_lose()
         print(' ')
         display_lose()
         print()
@@ -253,7 +253,7 @@ def display_hangman(attempt_count):
                                   |    /|\\
                                   |    /
                                   |
-                                =========''', f'''{Fore.RED}
+                                =========''', f'''{Fore.YELLOW}
                                   +-----+
                                   |     |
                                   |     O
@@ -267,7 +267,7 @@ def display_hangman(attempt_count):
                                   |    /|
                                   |
                                   |
-                                =========''', f'''{Fore.YELLOW}
+                                =========''', f'''{Fore.GREEN}
                                   +-----+
                                   |     |
                                   |     O
@@ -306,7 +306,7 @@ def end_game():
             play_game(word)
         else:
             print()
-            print('                        Please select a valid option!')
+            print(f"                        {Fore.RED}Please select a valid option!")
 
 def display_game_over_lose():
     print()
