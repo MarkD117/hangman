@@ -76,6 +76,7 @@ def validate_menu_selection(user_input):
 
 def difficulty_selection():
     global selected_word_difficulty
+    print_main_logo()
     print('                        +---------------------------+')
     print('                        |  *** DIFFICULTY MENU ***  |')
     print('                        +---------------------------+')
