@@ -1,6 +1,9 @@
 import random
 import os
+import colorama
+from colorama import Fore, Back, Style
 from words import easy_words_list, medium_words_list, hard_words_list
+colorama.init(autoreset=True)
 
 selected_word_difficulty = []
 
