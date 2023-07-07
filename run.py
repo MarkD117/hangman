@@ -156,6 +156,7 @@ def select_word(chosen_list):
 
 
 def display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count):
+    print("       +-------------------------------------------------------------+")
     print(display_hangman(attempt_count))
     print()
     print(f"                                {hidden_word}")
@@ -180,14 +181,17 @@ def play_game(word):
         if len(user_guess) == 1 and user_guess.isalpha():
             if user_guess in letters_guessed:
                 os.system('clear')
+                print("       +-------------------------------------------------------------+")
                 print(f"                 You have already guessed {user_guess}. Please try again!")
             elif user_guess not in word:
                 os.system('clear')
+                print("       +-------------------------------------------------------------+")
                 print(f"                 '{user_guess}' is not in this word. Please try again!")
                 attempt_count -= 1
                 letters_guessed.add(user_guess)
             else:
                 os.system('clear')
+                print("       +-------------------------------------------------------------+")
                 print(f"                        Well done! {user_guess} is in the word!")
                 letters_guessed.add(user_guess)
                 
@@ -203,9 +207,11 @@ def play_game(word):
         elif len(user_guess) == len(word) and user_guess.isalpha():
             if user_guess in words_guessed:
                 os.system('clear')
+                print("       +-------------------------------------------------------------+")
                 print(f"                 You have already guessed {user_guess}. Please try again!")
             elif user_guess != word:
                 os.system('clear')
+                print("       +-------------------------------------------------------------+")
                 print(f"                      {user_guess} is not the correct word!")
                 attempt_count -= 1
                 words_guessed.add(user_guess)
@@ -214,6 +220,7 @@ def play_game(word):
                 hidden_word = word
         else:
             os.system('clear')
+            print("       +-------------------------------------------------------------+")
             print('                      Invalid guess. Please try again!')
         display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
     if guessed:
