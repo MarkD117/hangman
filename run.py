@@ -66,10 +66,10 @@ def validate_menu_selection(user_input):
         int_user_input = int(user_input)
         if int_user_input > 3:
             print(
-                f"             Please enter a number provided, '{user_input}' is not an option.\n"
+                f"             {Fore.RED}Please enter a number provided, '{user_input}' is not an option.\n"
             )
     except ValueError:
-        print(f"           Invalid selection, please try again by choosing a number.\n")
+        print(f"           {Fore.RED}Invalid selection, please try again by choosing a number.\n")
         return False
     
     return True
@@ -148,7 +148,7 @@ def display_game_rules():
             return False
         else:
             print()
-            print("          Invalid input!")
+            print(f"          {Fore.RED}Invalid input!")
 
 def select_word(chosen_list):
     selected_word = random.choice(chosen_list)
@@ -182,17 +182,17 @@ def play_game(word):
             if user_guess in letters_guessed:
                 os.system('clear')
                 print("       +-------------------------------------------------------------+")
-                print(f"                 You have already guessed {user_guess}. Please try again!")
+                print(f"                 {Fore.RED}You have already guessed {user_guess}. Please try again!")
             elif user_guess not in word:
                 os.system('clear')
                 print("       +-------------------------------------------------------------+")
-                print(f"                 '{user_guess}' is not in this word. Please try again!")
+                print(f"                 {Fore.RED}'{user_guess}' is not in this word. Please try again!")
                 attempt_count -= 1
                 letters_guessed.add(user_guess)
             else:
                 os.system('clear')
                 print("       +-------------------------------------------------------------+")
-                print(f"                        Well done! {user_guess} is in the word!")
+                print(f"                        {Fore.GREEN}Well done! {user_guess} is in the word!")
                 letters_guessed.add(user_guess)
                 
                 # Replacing letters in the hidden word
@@ -208,11 +208,11 @@ def play_game(word):
             if user_guess in words_guessed:
                 os.system('clear')
                 print("       +-------------------------------------------------------------+")
-                print(f"                 You have already guessed {user_guess}. Please try again!")
+                print(f"                 {Fore.RED}You have already guessed {user_guess}. Please try again!")
             elif user_guess != word:
                 os.system('clear')
                 print("       +-------------------------------------------------------------+")
-                print(f"                      {user_guess} is not the correct word!")
+                print(f"                      {Fore.RED}{user_guess} is not the correct word!")
                 attempt_count -= 1
                 words_guessed.add(user_guess)
             else:
@@ -221,7 +221,7 @@ def play_game(word):
         else:
             os.system('clear')
             print("       +-------------------------------------------------------------+")
-            print('                      Invalid guess. Please try again!')
+            print(f"                      {Fore.RED}Invalid guess. Please try again!")
         display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
     if guessed:
         os.system('clear')
@@ -236,7 +236,7 @@ def play_game(word):
         print(' ')
         display_lose()
         print()
-        print(f"      You ran out of attempts. The word was {word}. Try again next time!")
+        print(f"      {Fore.RED}You ran out of attempts. The word was {word}. Try again next time!")
 
 def display_hangman(attempt_count):
     hangman_stage = ['''
