@@ -290,7 +290,9 @@ def end_game():
             start_menu()
             play_game(word)
         else:
+            print()
             print('Please select a valid option!')
+            print()
 
 def display_game_over():
     print('██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗')
