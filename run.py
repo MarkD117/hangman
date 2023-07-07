@@ -279,8 +279,8 @@ def display_hangman(attempt_count):
     return hangman_stage[attempt_count]
 
 def end_game():
-    word = select_word(selected_word_difficulty)
     while True:
+        word = select_word(selected_word_difficulty)
         end_game_input = input("Play Again? (Y/N): ").upper()
         if end_game_input == "Y":
             os.system('clear')
