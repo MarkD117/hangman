@@ -153,19 +153,19 @@ def display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count
     print(display_hangman(attempt_count))
     print(hidden_word)
     print()
-    print(f"Guessed letters: {letters_guessed}")
+    print(f"Guessed letters: {', '.join(letters_guessed)}")
     print()
-    print(f"Guessed words: {words_guessed}")
+    print(f"Guessed words: {', '.join(words_guessed)}")
     print()
 
 
 def play_game(word):
     hidden_word = " ".join("_" * len(word))
     guessed = False
-    letters_guessed = []
-    words_guessed = []
+    letters_guessed = set()
+    words_guessed = set()
     attempt_count = 6
-    
+
     display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
 
     while not guessed and attempt_count > 0:
@@ -178,11 +178,11 @@ def play_game(word):
                 os.system('clear')
                 print(f"'{user_guess}' is not in this word. Please try again!")
                 attempt_count -= 1
-                letters_guessed.append(user_guess)
+                letters_guessed.add(user_guess)
             else:
                 os.system('clear')
                 print(f"Well done! {user_guess} is in the word!")
-                letters_guessed.append(user_guess)
+                letters_guessed.add(user_guess)
                 
                 # Replacing letters in the hidden word
                 hidden_word_as_list = list(hidden_word)
@@ -201,7 +201,7 @@ def play_game(word):
                 os.system('clear')
                 print(f"{user_guess} is not the correct word!")
                 attempt_count -= 1
-                words_guessed.append(user_guess)
+                words_guessed.add(user_guess)
             else:
                 guessed = True
                 hidden_word = word
