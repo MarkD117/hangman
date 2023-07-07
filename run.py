@@ -149,19 +149,24 @@ def select_word(chosen_list):
     return selected_word.upper()
 
 
+def display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count):
+    print(display_hangman(attempt_count))
+    print(hidden_word)
+    print()
+    print(f"Guessed letters: {letters_guessed}")
+    print()
+    print(f"Guessed words: {words_guessed}")
+    print()
+
+
 def play_game(word):
     hidden_word = " ".join("_" * len(word))
     guessed = False
     letters_guessed = []
     words_guessed = []
     attempt_count = 6
-    print(display_hangman(attempt_count))
-    print(hidden_word)
-    print('\n')
-    print(f"Guessed letters: {letters_guessed}")
-    print('\n')
-    print(f"Guessed words: {words_guessed}")
-    print('\n')
+    
+    display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
 
     while not guessed and attempt_count > 0:
         user_guess = input("Please guess a letter or word: ").upper()
@@ -203,26 +208,13 @@ def play_game(word):
         else:
             os.system('clear')
             print('Invalid guess. Please try again!')
-        print(display_hangman(attempt_count))
-        print(hidden_word)
-        print('\n')
-        print(f"Guessed letters: {letters_guessed}")
-        print('\n')
-        print(f"Guessed words: {words_guessed}")
-        print('\n')
+        display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
     if guessed:
         os.system('clear')
-        print(display_hangman(attempt_count))
-        print(hidden_word)
-        print('\n')
-        print(f"Guessed letters: {letters_guessed}")
-        print('\n')
-        print(f"Guessed words: {words_guessed}")
-        print('\n')
+        display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
         print("Congratulations, you guessed the correct word!")
     else:
         print(f"You ran out of attempts. The word was {word}. Try again next time!")
-
 
 def display_hangman(attempt_count):
     hangman_stage = ['''
