@@ -216,7 +216,7 @@ def play_game(word):
         print(' ')
         display_win()
         print()
-        print("Congratulations, you guessed the correct word!")
+        print(f"Congratulations, you guessed the correct word! The word was {word}.")
     else:
         os.system('clear')
         display_game_over()
