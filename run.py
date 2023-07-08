@@ -54,6 +54,8 @@ def start_menu():
             display_game_rules()
             return False
         elif selected_menu_option == '3':  
+            print()
+            print(f"                            {Fore.RED}Game has been exited!")
             exit()
             return False
         else:
