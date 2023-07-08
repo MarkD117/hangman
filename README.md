@@ -39,3 +39,17 @@ During the planning stages of this project, [Smartdraw](https://cloud.smartdraw.
 Throughout the development of the project, some new functions and display cases have been added; however, the base game functionality/logic has stayed quite similar to the initial idea.
 
 ![Screenshot](documentation/hangman-flowchart.png)
+
+## Features
+
+### Main Logo
+
+- The main game logo is displayed on the start menu and difficulty selection menus. The logo was created with a [Text to ASCII Art](https://patorjk.com/software/taag/) generator. The logo itself is meaningful and intersting to look at. It further demonstrates what the program is about.
+
+    ![Screenshot](documentation/main-logo.png)
+
+### Start Menu
+
+- The start menu consists of 3 separate options, and, prompts the user to enter information. Each option has a corresponding number. These numbers are what the user needs to enter to access these features in the program. In the event that the user enters invalid information, an error message will appear prompting them for the correct information.
+
+    ![Screenshot](documentation/start-menu.png)
