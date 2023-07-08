@@ -31,3 +31,9 @@ The game was ultimately designed to be interesting to look at as well as intuiti
 3. As a new site user, I'd like the navigation to be simple and easy to understand.
 4. As a new site user, I'd like to easily understand what input is needed on each step.
 5. As a new site user, I'd like the game to test my knowledge and give me feedback on my progress.
+
+## Flowchart
+
+During the planning stages of this project, [Smartdraw](https://cloud.smartdraw.com/) was used to design the below flochart in order to plan the logic of program.
+
+![Screenshot](documentation/hangman-flowchart.png)
