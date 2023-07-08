@@ -1049,27 +1049,12 @@ primary_word_list = [ 'mist',
 'zip',
 'zoom']
 
-# Code used to format list onto separate lines
-# for i in primary_word_list:
-#     print(f"'{i}',")
-
-# Code used to find all invalid words
-# for i in primary_word_list:
-#     if "-" in i or " " in i:
-#         print(i)
 
 #list of 376 easy words
 easy_words_list = [word for word in primary_word_list if len(word) < 5]
-# print(easy_words_list)
-# print(len(easy_words_list))
 
 #list of 457 medium words
 medium_words_list = [word for word in primary_word_list if len(word) > 4 and len(word) < 7]
-# print(medium_words_list)
-# print(len(medium_words_list))
 
 #list of 217 hard words
 hard_words_list = [word for word in primary_word_list if len(word) > 6]
-# print(hard_words_list)
-# print(len(hard_words_list))
-
