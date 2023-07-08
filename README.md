@@ -36,4 +36,6 @@ The game was ultimately designed to be interesting to look at as well as intuiti
 
 During the planning stages of this project, [Smartdraw](https://cloud.smartdraw.com/) was used to design the below flochart in order to plan the logic of program.
 
+Throughout the development of the project, some new functions and display cases have been added; however, the base game functionality/logic has stayed quite similar to the initial idea.
+
 ![Screenshot](documentation/hangman-flowchart.png)
