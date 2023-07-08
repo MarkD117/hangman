@@ -23,3 +23,11 @@ The game was ultimately designed to be interesting to look at as well as intuiti
 - Difficulty settings are displayed in Green, Yellow and Red ranging from easy to hard.
 - Green and Red are used for win and loss case text.
 - The revealed hidden word is displayed in Yellow at the end of the game.
+
+## User Stories
+
+1. As a new site user, I'd like to understand the site's goal so that I can determine whether I would like to use it or not.
+2. As a new site user, I'd like to understand how to play the game.
+3. As a new site user, I'd like the navigation to be simple and easy to understand.
+4. As a new site user, I'd like to easily understand what input is needed on each step.
+5. As a new site user, I'd like the game to test my knowledge and give me feedback on my progress.
