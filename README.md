@@ -5,7 +5,9 @@ The objective is simple yet thrilling: guess the hidden word by suggesting lette
 
 The live project can be accessed [here](https://hangman-md-95d75375f313.herokuapp.com/)
 
-![Screenshot](documentation/start-menu-screen.png)
+<p align="center">
+<img src="documentation/start-menu-screen.png"/>
+</p>
 
 ## UI/UX
 
@@ -45,11 +47,15 @@ Throughout the development of the project, some new functions and display cases 
 ### Main Logo
 
 - The main game logo is displayed on the start menu and difficulty selection menus. The logo was created with a [Text to ASCII Art](https://patorjk.com/software/taag/) generator. The logo itself is meaningful and intersting to look at. It further demonstrates what the program is about.
-
-    ![Screenshot](documentation/main-logo.png)
+    
+    <p align="center">
+    <img src="documentation/main-logo.png"/>
+    </p>
 
 ### Start Menu
 
 - The start menu consists of 3 separate options, and, prompts the user to enter information. Each option has a corresponding number. These numbers are what the user needs to enter to access these features in the program. In the event that the user enters invalid information, an error message will appear prompting them for the correct information.
 
-    ![Screenshot](documentation/start-menu.png)
+    <p align="center">
+    <img src="documentation/start-menu.png"/>
+    </p>
