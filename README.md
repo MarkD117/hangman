@@ -123,7 +123,7 @@ Upon each guess, the program will output specific messages based on what the use
 
 <p align="center">
     <img src="documentation/guess-not-in-word.png"/>
-    <img src="documentation/guess-letter-again-2.png"/>
+    <img src="documentation/guess-letter-again.png"/>
     <img src="documentation/guess-correct-letter.png"/>
     <img src="documentation/invalid-guess.png"/>
 </p>
