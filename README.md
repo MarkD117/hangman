@@ -171,5 +171,5 @@ If the user does not want to play again by entering 'N', they will be returned t
 - [Git](https://www.atlassian.com/git/tutorials/what-is-git) used for version control.
 - [GitHub](https://github.com/) used to store game source code.
 - [GitPod](https://gitpod.io/) used as a cloud-based IDE for developing the game.
-- [Heroku](https://id.heroku.com/) used to deiplot the project.
+- [Heroku](https://id.heroku.com/) used to deploy the project.
 - [Smartdraw](https://cloud.smartdraw.com/) used to create program flowchart.
