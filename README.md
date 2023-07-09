@@ -42,6 +42,7 @@ Throughout the development of the project, some new functions and display cases 
 
 ![Screenshot](documentation/hangman-flowchart.png)
 
+
 ## Features
 
 ### Main Logo
@@ -127,5 +128,21 @@ Upon each guess, the program will output specific messages based on what the use
     <img src="documentation/invalid-guess.png"/>
 </p>
 
+### Game Over Screen
 
+The game over screen will display to the user if they have run out of attempts or if they correctly guessed the word. If the user loses the game, the game over text will be red, 'YOU LOSE' text will appear, and the hidden word will be revealed in yellow. If the user wins the game, the game over text will be green, 'YOU WIN' will appear, and again, the hidden word will be revealed in yellow.
 
+<p align="center">
+    <img src="documentation/game-over-win.png"/>
+    <img src="documentation/game-over-lose.png"/>
+</p>
+
+### Replay Feature
+
+On the game over screen, the user in prompted for input asking if they would like to play the game again. If they play again by entering 'Y', the program will restart the game at the chosen difficulty with a new word to guess.
+
+If the user does not want to play again by entering 'N', they will be returned to the start menu, where they can select a new difficulty. The prevents the need for reloading the program to play again! if the user enters an invalid input, an error message will appear.
+
+<p align="center">
+    <img src="documentation/replay-feature.png"/>
+</p>
