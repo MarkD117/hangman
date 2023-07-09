@@ -173,3 +173,34 @@ If the user does not want to play again by entering 'N', they will be returned t
 - [GitPod](https://gitpod.io/) used as a cloud-based IDE for developing the game.
 - [Heroku](https://id.heroku.com/) used to deploy the project.
 - [Smartdraw](https://cloud.smartdraw.com/) used to create program flowchart.
+
+## Testing
+
+### Code Validation
+
+[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the python code.
+
+
+
+### Browser Compatibility
+
+The site has been tested on the following browsers:
+- Google Chrome - ✔️
+- Mozilla FireFox - ✔️
+- Microsoft Edge - ✔️
+- iOS (Mobile) - ❌
+- Android - ❌
+
+Through testing, mobile browsers are not Compatible and will not run the program correctly.
+
+### Validating User Stories
+
+[Back to User Stories](#user-stories)
+
+| Story No. | Feature Developed | Criteria Met 
+|--|--|--|
+| 1 | The start menu clearly outlines the sites purpose in the main heading. In the event that the user does not know what 'Hangman' is, the 'Play Game' option immediately signafies to the user that this program is a game allowing them to decide whether they would like to use it or not. | Pass | 
+| 2 | Rules menu developed to explain to the user exactly how to play the game. | Pass | 
+| 3 | All options are clearly labelled and have descriptive names. If the user enters invalid information, error messages will be shown pointing them in the right direction. Navigation is built to be intuitive and easy to understand. | Pass | 
+| 4 | Each input message is clear and descriptive when prompting the user for information. Again there are error messages in case users enter incorrect information.  | Pass | 
+| 5 | The game is built with varying levels of difficulty which will test the players knowledge indefinitely. Feedback is presented in the form of the custom messages, tracking guesses and updating game stages. | Pass | 
