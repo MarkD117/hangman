@@ -99,3 +99,33 @@ The further along the hangman stage is, the colour of the hangman will also star
     <img src="documentation/hangman-stage-2.png"/>
     <img src="documentation/hangman-stage-3.png"/>
 </p>
+
+### Revealing Hidden Word
+
+As the user guesses letters, the hidden word will update in accordance with all correct letters guessed by the player. When the user guesses a correct letter, the underscore in the position of that letter will be replaced with the selected letter. For example, if the user guesses 'I', and it is in the chosen word, it will be replaced like the example below.
+
+<p align="center">
+    <img src="documentation/revealing-hidden-word.png"/>
+</p>
+
+### Tracking Guessed Words & Letters
+
+Throughout the guessing process, each guessed word and letter will be tracked and added to the 'Guessed Letters' and 'Guessed Words' sets. These sets will update and display the information to the user upon guessing. This is to show the user what they have already guessed so that they do not need to enter it again. In the event that the user enters the same letter or word twice, a message will appear explaining that they have already guessed that particular letter or word.
+
+<p align="center">
+    <img src="documentation/guess-tracking.png"/>
+</p>
+
+### Guess Feedback
+
+Upon each guess, the program will output specific messages based on what the user has input. These include; telling the user if their guess is or is not in the word, if they have aready guessed a particular word or letter or if their guess is invalid. Invalid guesses can be caused by entering a number or a word with a different length than the chosen word.
+
+<p align="center">
+    <img src="documentation/guess-not-in-word.png"/>
+    <img src="documentation/guess-letter-again-2.png"/>
+    <img src="documentation/guess-correct-letter.png"/>
+    <img src="documentation/invalid-guess.png"/>
+</p>
+
+
+
