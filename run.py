@@ -362,8 +362,7 @@ def end_game():
             play_game(word)
         elif end_game_input == "N":
             os.system('clear')
-            start_menu()
-            play_game(word)
+            main()
         else:
             print()
             print(f"                        {Fore.RED}Please select a valid option!")
