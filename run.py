@@ -273,7 +273,7 @@ def play_game(word):
         print()
         print(f"      {Fore.GREEN}Congratulations, the word was {Fore.YELLOW}{word}{Fore.GREEN}. You guessed correctly!.")
     
-    # Output for LOSE cas
+    # Output for LOSE case
     else:
         os.system('clear')
         display_game_over_lose()
