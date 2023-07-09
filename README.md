@@ -146,3 +146,17 @@ If the user does not want to play again by entering 'N', they will be returned t
 <p align="center">
     <img src="documentation/replay-feature.png"/>
 </p>
+
+## Future Features
+
+### Score system
+
+- A future feature I would be keen to add is a score system. For each correctly guessed letter, the player could gain a set amount of score, for example, 25 points. If they guessed the word at the end of the game they could gain 100 points. If a user guesses the full word they could recieve even more bonus points as it is the hardest to accomplish. The harder the difficulty, the more points you gain. The users total points will be displayed at the end of the game.
+
+### Storing The User Score
+
+- Another feature that I would like to add in addition to the user score, is a way to store the score. This way the user could keep track of their own score and try to beat their records. This could also be implemented for other users to keep track of all scores recieved on the game. This would allow users to compete against each other to achieve the highest score.
+
+### Adding a Timer
+
+- Another interesting feature I would like to add is a timer. A timer adds a sense of urgency and challenge to the game. Players will need to make their guesses within a limited time frame, which can increase the excitement and engagement. That said, players will need to be provided with sufficient time to make their guesses, considering the complexity of the words and the difficulty of the game. The timer duration will be adjusted with each difficulty accordingly to ensure a fair and enjoyable experience for players.
