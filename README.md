@@ -160,3 +160,16 @@ If the user does not want to play again by entering 'N', they will be returned t
 ### Adding a Timer
 
 - Another interesting feature I would like to add is a timer. A timer adds a sense of urgency and challenge to the game. Players will need to make their guesses within a limited time frame, which can increase the excitement and engagement. That said, players will need to be provided with sufficient time to make their guesses, considering the complexity of the words and the difficulty of the game. The timer duration will be adjusted with each difficulty accordingly to ensure a fair and enjoyable experience for players.
+
+
+## Technologies Used
+
+- [Python3](https://en.wikipedia.org/wiki/Python_(programming_language)) was used to create all game content and logic.
+- [Random](https://docs.python.org/3/library/random.html) python library used to select a random word from a list.
+- [OS](https://docs.python.org/3/library/os.html) python library used to clear the terminal.
+- [Colorama](https://pypi.org/project/colorama/) used to apply color to all terminal text.
+- [Git](https://www.atlassian.com/git/tutorials/what-is-git) used for version control.
+- [GitHub](https://github.com/) used to store game source code.
+- [GitPod](https://gitpod.io/) used as a cloud-based IDE for developing the game.
+- [Heroku](https://id.heroku.com/) used to deiplot the project.
+- [Smartdraw](https://cloud.smartdraw.com/) used to create program flowchart.
