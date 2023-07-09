@@ -78,3 +78,22 @@ Once the user selects 'Play Game' on the start menu, they will be shown this men
     <img src="documentation/difficulty-menu.png"/>
 </p>
 
+### Main Game Screen
+
+The main game screen displays all of the game information to the user. This includes the hangman's gallows, what letters have been guessed, what words have been guessed and a prompt to the user to enter a word or letter. Again, when the user enters an invalid input, a error message will be shown.
+
+<p align="center">
+    <img src="documentation/main-game-screen.png"/>
+</p>
+
+### Constantly Updating Hangman Stages
+
+The individual stages of the hangman will constantly update depending on the inputs of the user. If the user enters a correct letter, the hangman stage will stay the same, if they enter a letter or word that is incorrect, it will update and show the next stage. Throughout the guessing process, 
+
+The further along the hangman stage is, the colour of the hangman will also start to change. The first three stages are 'Green', the next two are 'Yellow' and the last stage before the game ends, is 'Red'. This signifies to the user that they are running out of guesses.
+
+<p align="center">
+    <img src="documentation/hangman-stage-1.png"/>
+    <img src="documentation/hangman-stage-2.png"/>
+    <img src="documentation/hangman-stage-3.png"/>
+</p>
