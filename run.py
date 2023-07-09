@@ -8,6 +8,29 @@ colorama.init(autoreset=True)
 # Initialising an empty list for difficulty selected by user.
 selected_word_difficulty = []
 
+# Initialising colour variables
+RED = Fore.RED
+YEL = Fore.YELLOW
+GRE = Fore.GREEN
+BLU = Fore.CYAN
+RES = Fore.RESET
+NOR = Style.NORMAL
+LI_GRE = Fore.LIGHTGREEN_EX
+LI_YEL = Fore.LIGHTYELLOW_EX
+LI_RED = Fore.LIGHTRED_EX
+
+
+def center_print(spaces, string):
+    """
+    Center print statements by adding set number
+    of spaces before pre-determined text.
+    """
+    text = ""
+    for i in range(spaces):
+        text = text + " "
+    
+    print(text + string)
+
 
 def print_main_logo():
     """
