@@ -5,8 +5,9 @@ from colorama import Fore, Back, Style
 from words import easy_words_list, medium_words_list, hard_words_list
 colorama.init(autoreset=True)
 
-# Initialising an empty list for difficulty selected by user
+# Initialising an empty list for difficulty selected by user.
 selected_word_difficulty = []
+
 
 def print_main_logo():
     """
@@ -26,8 +27,8 @@ def start_menu():
     """
     Displays start menu.
     Get input from the user.
-    Run a while loop to collect valid data from the user via 
-    the terminal, which must be 1, 2 or 3. The loop will repeatedly 
+    Run a while loop to collect valid data from the user via
+    the terminal, which must be 1, 2 or 3. The loop will repeatedly
     request data until it is valid.
     """
     print_main_logo()
@@ -49,11 +50,11 @@ def start_menu():
             os.system('clear')
             difficulty_selection()
             return False
-        elif selected_menu_option == '2':  
+        elif selected_menu_option == '2':
             os.system('clear')
             display_game_rules()
             return False
-        elif selected_menu_option == '3':  
+        elif selected_menu_option == '3':
             print()
             print(f"                            {Fore.RED}Game has been exited!")
             exit()
@@ -78,16 +79,17 @@ def validate_menu_selection(user_input):
     except ValueError:
         print(f"           {Fore.RED}Invalid selection, please try again by choosing a number.\n")
         return False
-    
+
     return True
+
 
 def difficulty_selection():
     """
     Displays difficulty menu
     Get input from the user, similar to start_game function.
-    Run a while loop to collect valid data from the user via 
-    the terminal, which must be between 1 - 4. The loop will repeatedly 
-    request data until it is valid. Each difficulty will set value of 
+    Run a while loop to collect valid data from the user via
+    the terminal, which must be between 1 - 4. The loop will repeatedly
+    request data until it is valid. Each difficulty will set value of
     selected_word_difficulty list.
     """
     global selected_word_difficulty
@@ -132,8 +134,8 @@ def difficulty_selection():
 def display_game_rules():
     """
     Displays rules menu explaining to user how to play the game.
-    Run a while loop to collect valid data from the user via 
-    the terminal. The loop will repeatedly request data until it is valid. 
+    Run a while loop to collect valid data from the user via
+    the terminal. The loop will repeatedly request data until it is valid.
     """
     print(f"            {Fore.CYAN}+----------------------------------------------------+")
     print(f"            {Fore.CYAN}|                 {Fore.YELLOW}*** RULES MENU ***                 {Fore.CYAN}|")
@@ -171,6 +173,7 @@ def display_game_rules():
             print(f"                                {Fore.RED}Invalid input!")
             print()
 
+
 def select_word(chosen_list):
     """
     Selects a random word from chosen difficulty list.
@@ -197,9 +200,9 @@ def display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count
 
 def play_game(word):
     """
-    Handles main game functionality and logic. 'Word' parameter is the 
+    Handles main game functionality and logic. 'Word' parameter is the
     chosen word from the select_word funtion. Runs a while loop to check user inputs.
-    Based on user input custom outputs are shown. While loop will continously ask for 
+    Based on user input custom outputs are shown. While loop will continously ask for
     input until user runs out of tries or guesses correct word.
     """
 
@@ -231,14 +234,15 @@ def play_game(word):
                 print("       +-------------------------------------------------------------+")
                 print(f"                        {Fore.GREEN}Well done! {user_guess} is in the word!")
                 letters_guessed.add(user_guess)
-                
+
                 # Replaces letters in the hidden word
                 hidden_word_as_list = list(hidden_word)
                 indices = [i for i, letter in enumerate(word) if letter == user_guess]
                 for index in indices:
-                    hidden_word_as_list[index * 2] = user_guess # Index multiplied by 2 to account for additional spaces
+                    # Index multiplied by 2 to account for additional spaces
+                    hidden_word_as_list[index * 2] = user_guess
                 hidden_word = "".join(hidden_word_as_list)
-                
+
                 # If no underscores left in the word, user has guessed correctly
                 if "_" not in hidden_word:
                     guessed = True
@@ -263,7 +267,7 @@ def play_game(word):
             print("       +-------------------------------------------------------------+")
             print(f"                      {Fore.RED}Invalid guess. Please try again!")
         display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
-    
+
     # Output for WIN case
     if guessed:
         os.system('clear')
@@ -281,6 +285,7 @@ def play_game(word):
         display_lose()
         print()
         print(f"      {Fore.RED}You ran out of attempts. The word was {Fore.YELLOW}{word}{Fore.RED}. Try again next time!")
+
 
 def display_hangman(attempt_count):
     """
@@ -333,13 +338,14 @@ def display_hangman(attempt_count):
                                 =========''', f'''{Fore.GREEN}
                                   +-----+
                                   |     |
-                                  |   
+                                  |
                                   |
                                   |
                                   |
                                 =========''']
 
     return hangman_stage[attempt_count]
+
 
 def end_game():
     """
@@ -362,6 +368,7 @@ def end_game():
             print()
             print(f"                        {Fore.RED}Please select a valid option!")
 
+
 def display_game_over_lose():
     """
     Output for game over screen if user loses.
@@ -374,6 +381,7 @@ def display_game_over_lose():
     print(f"{Fore.RED}  ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║")
     print(f"{Fore.RED}   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝")
 
+
 def display_lose():
     """
     Output for loss screen
@@ -384,6 +392,7 @@ def display_lose():
     print(f"{Fore.RED}         ╚██╔╝  ██║   ██║██║   ██║    ██║     ██║   ██║╚════██║██╔══╝")
     print(f"{Fore.RED}          ██║   ╚██████╔╝╚██████╔╝    ███████╗╚██████╔╝███████║███████╗ ")
     print(f"{Fore.RED}          ╚═╝    ╚═════╝  ╚═════╝     ╚══════╝ ╚═════╝ ╚══════╝╚══════╝")
+
 
 def display_game_over_win():
     """
@@ -397,6 +406,7 @@ def display_game_over_win():
     print(f"{Fore.GREEN}  ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║")
     print(f"{Fore.GREEN}   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝")
 
+
 def display_win():
     """
     Output for win screen
@@ -408,6 +418,7 @@ def display_win():
     print(f"{Fore.GREEN}               ██║   ╚██████╔╝╚██████╔╝    ╚███╔███╔╝██║██║ ╚████║")
     print(f"{Fore.GREEN}               ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝")
 
+
 def main():
     global selected_word_difficulty
     start_menu()
@@ -415,6 +426,5 @@ def main():
     play_game(word)
     end_game()
 
+
 main()
-
-
