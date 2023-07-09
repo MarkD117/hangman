@@ -21,10 +21,6 @@ LI_RED = Fore.LIGHTRED_EX
 
 
 def center_print(spaces, string):
-    """
-    Center print statements by adding set number
-    of spaces before pre-determined text.
-    """
     text = ""
     for i in range(spaces):
         text = text + " "
@@ -37,13 +33,13 @@ def print_main_logo():
     Prints the main logo of the game.
     """
     print()
-    print(f"       ██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗")
-    print(f"       ██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║")
-    print(f"       ███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║")
-    print(f"       ██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║")
-    print(f"       ██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║")
-    print(f"       ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝")
-    print()
+    print(f'''
+       ██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗
+       ██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║
+       ███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║
+       ██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║
+       ██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║
+       ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝''')
 
 
 def start_menu():
@@ -55,17 +51,19 @@ def start_menu():
     request data until it is valid.
     """
     print_main_logo()
-    print(f"                         {Fore.CYAN}+--------------------------+")
-    print(f"                         {Fore.CYAN}|    {Fore.YELLOW}*** START MENU ***    {Fore.CYAN}|")
-    print(f"                         {Fore.CYAN}+--------------------------+")
-    print(f"                         {Fore.CYAN}|                          |")
-    print(f"                         {Fore.CYAN}|       {Fore.RESET}Play Game: 1       {Fore.CYAN}|")
-    print(f"                         {Fore.CYAN}|                          |")
-    print(f"                         {Fore.CYAN}|       {Fore.RESET}Game Rules: 2      {Fore.CYAN}|")
-    print(f"                         {Fore.CYAN}|                          |")
-    print(f"                         {Fore.CYAN}|       {Fore.RESET}Exit Game: 3       {Fore.CYAN}|")
-    print(f"                         {Fore.CYAN}|                          |")
-    print(f"                         {Fore.CYAN}+--------------------------+\n")
+    print(f'''{BLU}
+                         +--------------------------+
+                         |    {YEL}*** START MENU ***    {BLU}|
+                         +--------------------------+
+                         |                          |
+                         |       {RES}Play Game: 1       {BLU}|
+                         |                          |
+                         |       {RES}Game Rules: 2      {BLU}|
+                         |                          |
+                         |       {RES}Exit Game: 3       {BLU}|
+                         |                          |
+                         +--------------------------+\n
+''')
 
     while True:
         selected_menu_option = input("                         Please select an option: ")
@@ -79,7 +77,7 @@ def start_menu():
             return False
         elif selected_menu_option == '3':
             print()
-            print(f"                            {Fore.RED}Game has been exited!")
+            print(f"                            {RED}Game has been exited!")
             exit()
             return False
         else:
@@ -97,10 +95,10 @@ def validate_menu_selection(user_input):
         int_user_input = int(user_input)
         if int_user_input > 3:
             print(
-                f"             {Fore.RED}Please enter a number provided, '{user_input}' is not an option.\n"
+                f"             {RED}Please enter a number provided, '{user_input}' is not an option.\n"
             )
     except ValueError:
-        print(f"           {Fore.RED}Invalid selection, please try again by choosing a number.\n")
+        print(f"           {RED}Invalid selection, please try again by choosing a number.\n")
         return False
 
     return True
@@ -117,19 +115,19 @@ def difficulty_selection():
     """
     global selected_word_difficulty
     print_main_logo()
-    print(f"                        {Fore.CYAN}+---------------------------+")
-    print(f"                        {Fore.CYAN}|  {Fore.YELLOW}*** DIFFICULTY MENU ***  {Fore.CYAN}|")
-    print(f"                        {Fore.CYAN}+---------------------------+")
-    print(f"                        {Fore.CYAN}|                           |")
-    print(f"                        {Fore.CYAN}|           {Fore.GREEN}{Style.BRIGHT}Easy: 1         {Fore.CYAN}{Style.NORMAL}|")
-    print(f"                        {Fore.CYAN}|                           |")
-    print(f"                        {Fore.CYAN}|          {Fore.YELLOW}{Style.BRIGHT}Medium: 2        {Fore.CYAN}{Style.NORMAL}|")
-    print(f"                        {Fore.CYAN}|                           |")
-    print(f"                        {Fore.CYAN}|           {Fore.RED}{Style.BRIGHT}Hard: 3         {Fore.CYAN}{Style.NORMAL}|")
-    print(f"                        {Fore.CYAN}|                           |")
-    print(f"                        {Fore.CYAN}|        {Fore.RESET}Start Menu: 4      {Fore.CYAN}|")
-    print(f"                        {Fore.CYAN}|                           |")
-    print(f"                        {Fore.CYAN}+---------------------------+\n")
+    center_print(24, f"{BLU}+---------------------------+")
+    center_print(24, f"{BLU}|  {YEL}*** DIFFICULTY MENU ***  {BLU}|")
+    center_print(24, f"{BLU}+---------------------------+")
+    center_print(24, f"{BLU}|                           |")
+    center_print(24, f"{BLU}|           {LI_GRE}Easy: 1         {BLU}{NOR}|")
+    center_print(24, f"{BLU}|                           |")
+    center_print(24, f"{BLU}|          {LI_YEL}Medium: 2        {BLU}{NOR}|")
+    center_print(24, f"{BLU}|                           |")
+    center_print(24, f"{BLU}|           {LI_RED}Hard: 3         {BLU}{NOR}|")
+    center_print(24, f"{BLU}|                           |")
+    center_print(24, f"{BLU}|        {RES}Start Menu: 4      {BLU}|")
+    center_print(24, f"{BLU}|                           |")
+    center_print(24, f"{BLU}+---------------------------+\n")
 
     while True:
         selected_difficulty_option = input("                        Please select an option: ")
@@ -160,40 +158,43 @@ def display_game_rules():
     Run a while loop to collect valid data from the user via
     the terminal. The loop will repeatedly request data until it is valid.
     """
-    print(f"            {Fore.CYAN}+----------------------------------------------------+")
-    print(f"            {Fore.CYAN}|                 {Fore.YELLOW}*** RULES MENU ***                 {Fore.CYAN}|")
-    print(f"            {Fore.CYAN}+----------------------------------------------------+")
-    print(f"            {Fore.CYAN}|                                                    |")
-    print(f"            {Fore.CYAN}|  {Fore.RESET}- You will have 6 tries to guess a hidden word.   {Fore.CYAN}|")
-    print(f"            {Fore.CYAN}|                                                    |")
-    print(f"            {Fore.CYAN}|  {Fore.RESET}- The higher the difficulty, the longer the word. {Fore.CYAN}|")
-    print(f"            {Fore.CYAN}|                                                    |")
-    print(f"            {Fore.CYAN}|  {Fore.RESET}- You may guess single letters or you can try to  {Fore.CYAN}|")
-    print(f"            {Fore.CYAN}|    {Fore.RESET}guess the full word.                            {Fore.CYAN}|")
-    print(f"            {Fore.CYAN}|                                                    |")
-    print(f"            {Fore.CYAN}|  {Fore.RESET}- Each will be counted as a guess!                {Fore.CYAN}|")
-    print(f"            {Fore.CYAN}|                                                    |")
-    print(f"            {Fore.CYAN}|  {Fore.RESET}- Upon each correct guess, the hidden word will   {Fore.CYAN}|")
-    print(f"            {Fore.CYAN}|    {Fore.RESET}start to appear.                                {Fore.CYAN}|")
-    print(f"            {Fore.CYAN}|                                                    |")
-    print(f"            {Fore.CYAN}|  {Fore.RESET}- Guess all of the letters or guess the word,     {Fore.CYAN}|")
-    print(f"            {Fore.CYAN}|    {Fore.RESET}and you will win the game.                      {Fore.CYAN}|")
-    print(f"            {Fore.CYAN}|                                                    |")
-    print(f"            {Fore.CYAN}|  {Fore.RESET}- Run out of attempts, and the man will hang!     {Fore.CYAN}|")
-    print(f"            {Fore.CYAN}|                                                    |")
-    print(f"            {Fore.CYAN}|  {Fore.RESET}- Best of luck, and watch your neck!              {Fore.CYAN}|")
-    print(f"            {Fore.CYAN}|                                                    |")
-    print(f"            {Fore.CYAN}+----------------------------------------------------+\n")
+    print(f'''
+            {BLU}+--------------------------------------------------+
+            {BLU}|                {YEL}*** RULES MENU ***                {BLU}|
+            {BLU}+--------------------------------------------------+
+            {BLU}|                                                  |
+            {BLU}| {RES}- You will have 6 tries to guess a hidden word.  {BLU}|
+            {BLU}|                                                  |
+            {BLU}| {RES}- A higher difficulty will mean that you will    {BLU}|
+            {BLU}|   {RES}have to guess a longer word word.              {BLU}|
+            {BLU}|                                                  |
+            {BLU}| {RES}- You may guess single letters or you can try    {BLU}|
+            {BLU}|   {RES}to guess the full word.                        {BLU}|
+            {BLU}|                                                  |
+            {BLU}| {RES}- Each will be counted as a guess!               {BLU}|
+            {BLU}|                                                  |
+            {BLU}| {RES}- Upon each correct guess, the hidden word will  {BLU}|
+            {BLU}|   {RES}start to appear.                               {BLU}|
+            {BLU}|                                                  |
+            {BLU}| {RES}- Guess all of the letters or guess the word,    {BLU}|
+            {BLU}|   {RES}and you will win the game.                     {BLU}|
+            {BLU}|                                                  |
+            {BLU}| {RES}- Run out of attempts, and the man will hang!    {BLU}|
+            {BLU}|                                                  |
+            {BLU}| {RES}- Best of luck, and watch your neck!             {BLU}|
+            {BLU}|                                                  |
+            {BLU}+--------------------------------------------------+
+    ''')
 
     while True:
-        selected_rules_menu_option = input("                    Press Enter to return to Start Menu...")
+        selected_rules_menu_option = input("                  Press Enter to return to Start Menu...")
         if selected_rules_menu_option == '':
             os.system('clear')
             start_menu()
             return False
         else:
             print()
-            print(f"                                {Fore.RED}Invalid input!")
+            print(f"                                {RED}Invalid input!")
             print()
 
 
@@ -245,17 +246,17 @@ def play_game(word):
             if user_guess in letters_guessed:
                 os.system('clear')
                 print("       +-------------------------------------------------------------+")
-                print(f"                 {Fore.RED}You have already guessed {user_guess}. Please try again!")
+                print(f"                 {RED}You have already guessed {user_guess}. Please try again!")
             elif user_guess not in word:
                 os.system('clear')
                 print("       +-------------------------------------------------------------+")
-                print(f"                 {Fore.RED}'{user_guess}' is not in this word. Please try again!")
+                print(f"                 {RED}'{user_guess}' is not in this word. Please try again!")
                 attempt_count -= 1
                 letters_guessed.add(user_guess)
             else:
                 os.system('clear')
                 print("       +-------------------------------------------------------------+")
-                print(f"                        {Fore.GREEN}Well done! {user_guess} is in the word!")
+                print(f"                        {GRE}Well done! {user_guess} is in the word!")
                 letters_guessed.add(user_guess)
 
                 # Replaces letters in the hidden word
@@ -275,11 +276,11 @@ def play_game(word):
             if user_guess in words_guessed:
                 os.system('clear')
                 print("       +-------------------------------------------------------------+")
-                print(f"                 {Fore.RED}You have already guessed {user_guess}. Please try again!")
+                print(f"                 {RED}You have already guessed {user_guess}. Please try again!")
             elif user_guess != word:
                 os.system('clear')
                 print("       +-------------------------------------------------------------+")
-                print(f"                      {Fore.RED}{user_guess} is not the correct word!")
+                print(f"                      {RED}{user_guess} is not the correct word!")
                 attempt_count -= 1
                 words_guessed.add(user_guess)
             else:
@@ -288,7 +289,7 @@ def play_game(word):
         else:
             os.system('clear')
             print("       +-------------------------------------------------------------+")
-            print(f"                      {Fore.RED}Invalid guess. Please try again!")
+            print(f"                      {RED}Invalid guess. Please try again!")
         display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
 
     # Output for WIN case
@@ -298,7 +299,7 @@ def play_game(word):
         print(' ')
         display_win()
         print()
-        print(f"      {Fore.GREEN}Congratulations, the word was {Fore.YELLOW}{word}{Fore.GREEN}. You guessed correctly!.")
+        print(f"      {GRE}Congratulations, the word was {YEL}{word}{GRE}. You guessed correctly!.")
     
     # Output for LOSE case
     else:
@@ -307,7 +308,7 @@ def play_game(word):
         print(' ')
         display_lose()
         print()
-        print(f"      {Fore.RED}You ran out of attempts. The word was {Fore.YELLOW}{word}{Fore.RED}. Try again next time!")
+        print(f"      {RED}You ran out of attempts. The word was {YEL}{word}{RED}. Try again next time!")
 
 
 def display_hangman(attempt_count):
@@ -323,42 +324,42 @@ def display_hangman(attempt_count):
                                   |    /|\\
                                   |    / \\
                                   |
-                                =========''', f'''{Fore.RED}
+                                =========''', f'''{RED}
                                   +-----+
                                   |     |
                                   |     O
                                   |    /|\\
                                   |    /
                                   |
-                                =========''', f'''{Fore.YELLOW}
+                                =========''', f'''{YEL}
                                   +-----+
                                   |     |
                                   |     O
                                   |    /|\\
                                   |
                                   |
-                                =========''', f'''{Fore.YELLOW}
+                                =========''', f'''{YEL}
                                   +-----+
                                   |     |
                                   |     O
                                   |    /|
                                   |
                                   |
-                                =========''', f'''{Fore.GREEN}
+                                =========''', f'''{GRE}
                                   +-----+
                                   |     |
                                   |     O
                                   |     |
                                   |
                                   |
-                                =========''', f'''{Fore.GREEN}
+                                =========''', f'''{GRE}
                                   +-----+
                                   |     |
                                   |     O
                                   |
                                   |
                                   |
-                                =========''', f'''{Fore.GREEN}
+                                =========''', f'''{GRE}
                                   +-----+
                                   |     |
                                   |
@@ -388,7 +389,7 @@ def end_game():
             main()
         else:
             print()
-            print(f"                        {Fore.RED}Please select a valid option!")
+            print(f"                        {RED}Please select a valid option!")
 
 
 def display_game_over_lose():
@@ -396,24 +397,28 @@ def display_game_over_lose():
     Output for game over screen if user loses.
     """
     print()
-    print(f"{Fore.RED}  ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗")
-    print(f"{Fore.RED}  ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗")
-    print(f"{Fore.RED}  ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝")
-    print(f"{Fore.RED}  ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗")
-    print(f"{Fore.RED}  ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║")
-    print(f"{Fore.RED}   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝")
+    print(f'''{RED}
+   ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗ 
+  ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗
+  ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝
+  ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+  ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
+   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
+''')
 
 
 def display_lose():
     """
     Output for loss screen
     """
-    print(f"{Fore.RED}       ██╗   ██╗ ██████╗ ██╗   ██╗    ██╗      ██████╗ ███████╗███████╗")
-    print(f"{Fore.RED}       ╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║     ██╔═══██╗██╔════╝██╔════╝")
-    print(f"{Fore.RED}        ╚████╔╝ ██║   ██║██║   ██║    ██║     ██║   ██║███████╗█████╗")
-    print(f"{Fore.RED}         ╚██╔╝  ██║   ██║██║   ██║    ██║     ██║   ██║╚════██║██╔══╝")
-    print(f"{Fore.RED}          ██║   ╚██████╔╝╚██████╔╝    ███████╗╚██████╔╝███████║███████╗ ")
-    print(f"{Fore.RED}          ╚═╝    ╚═════╝  ╚═════╝     ╚══════╝ ╚═════╝ ╚══════╝╚══════╝")
+    print(
+f'''{RED}       ██╗   ██╗ ██████╗ ██╗   ██╗    ██╗      ██████╗ ███████╗███████╗
+       ╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║     ██╔═══██╗██╔════╝██╔════╝
+        ╚████╔╝ ██║   ██║██║   ██║    ██║     ██║   ██║███████╗█████╗ 
+         ╚██╔╝  ██║   ██║██║   ██║    ██║     ██║   ██║╚════██║██╔══╝  
+          ██║   ╚██████╔╝╚██████╔╝    ███████╗╚██████╔╝███████║███████╗
+          ╚═╝    ╚═════╝  ╚═════╝     ╚══════╝ ╚═════╝ ╚══════╝╚══════╝
+    ''')
 
 
 def display_game_over_win():
@@ -421,25 +426,28 @@ def display_game_over_win():
     Output for game over screen if user wins.
     """
     print()
-    print(f"{Fore.GREEN}  ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗")
-    print(f"{Fore.GREEN}  ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗")
-    print(f"{Fore.GREEN}  ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝")
-    print(f"{Fore.GREEN}  ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗")
-    print(f"{Fore.GREEN}  ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║")
-    print(f"{Fore.GREEN}   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝")
+    print(f'''{GRE}
+   ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗ 
+  ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗
+  ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝
+  ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+  ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
+   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
+    ''')
 
 
 def display_win():
     """
     Output for win screen
     """
-    print(f"{Fore.GREEN}            ██╗   ██╗ ██████╗ ██╗   ██╗    ██╗    ██╗██╗███╗   ██╗")
-    print(f"{Fore.GREEN}            ╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║    ██║██║████╗  ██║")
-    print(f"{Fore.GREEN}             ╚████╔╝ ██║   ██║██║   ██║    ██║ █╗ ██║██║██╔██╗ ██║")
-    print(f"{Fore.GREEN}              ╚██╔╝  ██║   ██║██║   ██║    ██║███╗██║██║██║╚██╗██║")
-    print(f"{Fore.GREEN}               ██║   ╚██████╔╝╚██████╔╝    ╚███╔███╔╝██║██║ ╚████║")
-    print(f"{Fore.GREEN}               ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝")
-
+    print(
+f'''{GRE}             ██╗   ██╗ ██████╗ ██╗   ██╗    ██╗    ██╗██╗███╗   ██╗
+             ╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║    ██║██║████╗  ██║
+              ╚████╔╝ ██║   ██║██║   ██║    ██║ █╗ ██║██║██╔██╗ ██║
+               ╚██╔╝  ██║   ██║██║   ██║    ██║███╗██║██║██║╚██╗██║
+                ██║   ╚██████╔╝╚██████╔╝    ╚███╔███╔╝██║██║ ╚████║
+                ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝
+    ''')
 
 def main():
     global selected_word_difficulty
@@ -449,4 +457,4 @@ def main():
     end_game()
 
 
-main()
+/
