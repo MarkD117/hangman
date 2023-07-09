@@ -72,7 +72,9 @@ If the user enters 2 in the start menu selection, the rules menu will display. T
 
 ### Difficulty Menu
 
-Once the user selects 'Play Game' on the start menu, they will be shown this menu below. This is the difficulty menu. It displays each of the selectable difficulties of the game. There is also an option that allows the user to go back to the start menu. Depending on the difficulty selected by the user, the length of the hidden word will change. The harder the difficulty, the longer the word. Similar to the previous menus, if the user enters data that is invalid, an error message will be shown pointing them in the right direction.
+Once the user selects 'Play Game' on the start menu, they will be shown this menu below. This is the difficulty menu. It displays each of the selectable difficulties of the game. There is also an option that allows the user to go back to the start menu. Depending on the difficulty selected by the user, the length of the hidden word will change. 
+
+When playing on easy, words of length 3-4 are displayed. When playing on medium difficulty, words of length 5-6 are displayed. When playing on hard difficulty, words of length 7 and above are displayed Similar to the previous menus, if the user enters data that is invalid, an error message will be shown pointing them in the right direction.
 
 <p align="center">
     <img src="documentation/difficulty-menu.png"/>
