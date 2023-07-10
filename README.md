@@ -389,3 +389,23 @@ I found that when not replaying the game, the `start_menu()` and `play_game()` f
 ## Known Bugs
 
 There are currently no known bugs or issues with this program.
+
+## Deployment
+
+The program was deployed using [Heroku](https://id.heroku.com/) by following these steps:
+
+1. Create the **requirements.txt** file specifying what python packages are required to work the project and run: `pip3 freeze > requirements.txt` in the terminal.
+2. Commit changes and push them to **GitHub**.
+3. Go to the **Heroku's website**.
+4. From the Heroku dashboard, click on **Create new app**.
+5. Enter the "App name" and **Choose a region** before clicking on "Create app".
+6. Go to **Config Vars** under the "Settings" tab.
+7. Click on **Reveals Config Vars** and add the KEY: CREDS and the VALUE stored in creds.json file if needed.
+8. Add the Config Var, **KEY: PORT and VALUE: 8000**.
+9. Go to **Buildpacks** section and click "Add buildpack".
+10. Select `python` and click "Save changes"
+11. Add `nodejs` buildpack as well using the same process.
+12. Go to **Deployment method**, under the "Deploy" tab select "GitHub" and click on **Connect to GitHub**.
+13. Go to "Connect to GitHub" section and **Search the Repository** to be deployed.
+14. Click **Connect** next the repository name.
+15. Choose **Automatic deploys** or **Manual deploys** to deploy your application.
