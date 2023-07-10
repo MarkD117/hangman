@@ -174,13 +174,17 @@ If the user does not want to play again by entering 'N', they will be returned t
 - [Heroku](https://id.heroku.com/) used to deploy the project.
 - [Smartdraw](https://cloud.smartdraw.com/) used to create program flowchart.
 
+
 ## Testing
 
 ### Code Validation
 
-[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the python code.
+[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the python code. More info about the code validation process can be seen in the [Bug Fixes](#bug-fixes) section of the README.
 
-
+<p align="center">
+    <img src="documentation/run.py-code-validation"/>
+    <img src="documentation/words.py-code-validation"/>
+</p>
 
 ### Browser Compatibility
 
@@ -204,3 +208,96 @@ Through testing, mobile browsers are not Compatible and will not run the program
 | 3 | All options are clearly labelled and have descriptive names. If the user enters invalid information, error messages will be shown pointing them in the right direction. Navigation is built to be intuitive and easy to understand. | Pass | 
 | 4 | Each input message is clear and descriptive when prompting the user for information. Again there are error messages in case users enter incorrect information.  | Pass | 
 | 5 | The game is built with varying levels of difficulty which will test the players knowledge indefinitely. Feedback is presented in the form of the custom messages, tracking guesses and updating game stages. | Pass | 
+
+### Testing and Results
+
+#### **Start Menu**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Program Text | Initial Startup | All text and colours load and are shown | pass
+| Play Game Option | Enter '1' | Clears terminal & displays difficulty menu | pass
+| Game Rules Option | Enter '2' | Clears terminal & displays rules menu | pass
+| Exit Game Option | Enter '3' | Exits program & displays exit message | pass
+| Invalid Number | Enter '4' | Display error message to choose a valid option | pass
+| Validate String Input | Enter string | Display error message to choose a number | pass
+| Validate Whitespace Input | Enter whitespace | Display error message to choose a number | pass
+| Validate Empty Input | Press 'Enter' | Display error message to choose a number | pass
+
+#### **Rules Menu**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Rules | Enter Rules Menu | All rule text and colours are displayed and can be seen clearly | pass
+| Rules Input | Press 'Enter' | Display start menu | pass
+| Validate int input | Enter int | Display invalid input message | pass
+| Validate String Input | Enter string | Display invalid input message | pass
+| Validate Whitespace Input | Enter whitespace | Display invalid input message | pass
+
+#### **Difficulty Menu**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Menu | Select 'Play Game' | All text and colours are displayed and can be seen clearly | pass
+| Easy Difficulty Option | Enter '1' | Hidden Words of length 3-4 are displayed | pass
+| Medium Difficulty Option | Enter '2' | Hidden Words of length 5-6 are displayed | pass
+| Hard Difficulty Option | Enter '3' | Hidden Words of length 7-8 are displayed | pass
+| Start Menu Option | Enter '4' | Hides the difficulty selection menu and shows the ready up menu | pass
+| Invalid Number | Enter '5' | Display error message to choose a valid option | pass
+| Validate String Input | Enter string | Display error message to choose a number | pass
+| Validate Whitespace Input | Enter whitespace | Display error message to choose a number | pass
+| Validate Empty Input | Press 'Enter' | Display error message to choose a number | pass
+
+#### **Main Game Screen**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Game Elements | Select difficulty | All text and colours load and are shown clearly | pass
+| Hangman Stages | Enter Incorrect Input | Stages update correctly | pass
+| Hangman Stages | Enter Correct Input | Stages do not update | pass
+| Hangman Stages | Enter Same Input | Stages do not update | pass
+| Hangman Stages | Enter Input | Stage colours change | pass
+| Hidden Word | Start Game | Correct length word displayed | pass
+| Hidden Word | Start Game | Word displayed as underscores | pass
+| Hidden Word | Guess correct letter | Corresponding underscore in hidden word replaced with guessed letter | pass
+
+**Guessed Variable Tracking**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Letter Tracking | Guess single letter | Guessed letter set updates & correctly displays guessed letters | pass
+| Letter Feedback | Guess correct letter | Correct letter message displayed | pass
+| Letter Feedback | Guess incorrect letter | Incorrect letter message displayed | pass
+| Letter Feedback | Guess same letter | Same letter message displayed & Letter not added to set twice | pass
+| Word Tracking | Guess full word | Guessed word set updates & correctly displays guessed words | pass
+| Word Feedback | Guess correct word | Correct word message displayed | pass
+| Word Feedback | Guess incorrect word | Incorrect word message displayed | pass
+| Word Feedback | Guess same word | Same word message displayed & word not added to set twice | pass
+
+**Input Validation**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Validate int input | Enter int | Display invalid input message | pass
+| Validate incorrect string length | Enter string | Display invalid input message | pass
+| Validate Whitespace Input | Enter whitespace | Display invalid input message | pass
+| Validate Empty Input | Press 'Enter' | Display invalid input message | pass
+
+#### **End Game Screen**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| End Screen Elements | Complete Game | All text and colours load and are shown clearly | pass
+| Hidden Word | Complete Game | Hidden word revealed in yellow text | pass
+| Win Case | Guess Correct Word | End game text displayed in 'Green' | pass
+| Win Case | Guess Correct Word | Win case messages displayed | pass
+| Loss Case | Run out of attempts | End game text displayed in 'Red' | pass
+| Loss Case | Run out of attempts | Loss case messages displayed | pass
+| Replay Feature | Complete Game | User prompted for input | pass
+| Replay Feature | Enter 'Y' | Quiz restarts at same difficulty | pass
+| Replay Feature | Enter 'N' | Start Menu displayed | pass
+| Replay Quiz Button | Click button | Restarts the quiz at the chosen difficulty | pass
+| Validate int input | Enter int | Display invalid input message | pass
+| Validate incorrect string | Enter string | Display invalid input message | pass
+| Validate Whitespace Input | Enter whitespace | Display invalid input message | pass
+| Validate Empty Input | Press 'Enter' | Display invalid input message | pass
