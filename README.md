@@ -182,8 +182,8 @@ If the user does not want to play again by entering 'N', they will be returned t
 [CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the python code. More info about the code validation process can be seen in the [Bug Fixes](#bug-fixes) section of the README.
 
 <p align="center">
-    <img src="documentation/run.py-code-validation"/>
-    <img src="documentation/words.py-code-validation"/>
+    <img src="documentation/run.py-code-validation.png"/>
+    <img src="documentation/words.py-code-validation.png"/>
 </p>
 
 ### Browser Compatibility
