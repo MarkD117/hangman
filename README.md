@@ -325,13 +325,13 @@ The idea of adding spaces between the hidden word underscores is the clearly sho
 
 By multiplying the index by 2, we can account for the additional spaces between the underscores in the hidden word. This way, when a correct letter is guessed, the corresponding underscore and space will be replaced by the letter. Implementing this fix solved the issue and the underscores were being replaced correctly
 
-- **Bug**
-<p align="center">
+**Bug**
+<p>
     <img src="documentation/underscore-bug.png"/>
 </p>
 
-- **Fixed Code**
-<p align="center">
+**Fixed Code**
+<p>
     <img src="documentation/underscore-bug-fix.png"/>
 </p>
 
@@ -339,18 +339,18 @@ By multiplying the index by 2, we can account for the additional spaces between 
 
 When the words list was first imported, there was over 1000+ words on a single line. Instead of formatting them manually, I wrote two loops. The first loop printed all list elements in the correct format on separate lines. The list contained some invalid words such as words with dashes inbetween or words with spaces. The second loop found each of these invalid words which allowed for them to be removed quickly.
 
-- **Initial List**
+**Initial List**
 <p align="center">
     <img src="documentation/initial-word-list.png"/>
 </p>
 
-- **Format Loop**
-<p align="center">
+**Format Loop**
+<p>
     <img src="documentation/format-loop.png"/>
 </p>
 
-- **Invalid Words Loop**
-<p align="center">
+**Invalid Words Loop**
+<p>
     <img src="documentation/invalid-words-loop.png"/>
 </p>
 
@@ -360,13 +360,13 @@ Throughout the testing process, I uncovered two very specific bugs. The first bu
 
 After some investigation, I found that the issue was caused due to the word selection function being called outside of the while loop in the `end_game()` function. This caused the word to not reset after the second replay. 
 
-- **Bugged Code**
-<p align="center">
+**Bugged Code**
+<p>
     <img src="documentation/updating-word-bug.png"/>
 </p>
 
-- **Fixed Code**
-<p align="center">
+**Fixed Code**
+<p>
     <img src="documentation/updating-word-bug-fix.png"/>
 </p>
 
@@ -376,12 +376,12 @@ The second bug caused the difficulty to not reset when going back to the main me
 
 I found that when not replaying the game, the `start_menu()` and `play_game()` functions were called. This completely skipped the `select_word(chosen_list)` function which only updated after the second playing of the game. The fix for this was to call the main function within the end game function to ensure that all parts of the program were executed correctly updating the difficulty thus showing the correct word length.
 
-- **Bugged Code**
-<p align="center">
+**Bugged Code**
+<p>
     <img src="documentation/difficulty-not-resetting-bug.png"/>
 </p>
 
-- **Fixed Code**
-<p align="center">
+**Fixed Code**
+<p>
     <img src="documentation/difficulty-not-resetting-fix.png"/>
 </p>
