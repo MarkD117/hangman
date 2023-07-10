@@ -114,6 +114,7 @@ def difficulty_selection():
     """
     global selected_word_difficulty
     print_main_logo()
+    print()
     center_print(24, f"{BLU}+---------------------------+")
     center_print(24, f"{BLU}|  {YEL}*** DIFFICULTY MENU ***  {BLU}|")
     center_print(24, f"{BLU}+---------------------------+")
