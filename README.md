@@ -385,3 +385,7 @@ I found that when not replaying the game, the `start_menu()` and `play_game()` f
 <p>
     <img src="documentation/difficulty-not-resetting-fix.png"/>
 </p>
+
+## Known Bugs
+
+There are currently no known bugs or issues with this program.
