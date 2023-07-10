@@ -24,7 +24,7 @@ def center_print(spaces, string):
     text = ""
     for i in range(spaces):
         text = text + " "
-    
+
     print(text + string)
 
 
@@ -62,11 +62,11 @@ def start_menu():
                          |                          |
                          |       {RES}Exit Game: 3       {BLU}|
                          |                          |
-                         +--------------------------+\n
-''')
+                         +--------------------------+''')
 
     while True:
-        selected_menu_option = input("                         Please select an option: ")
+        selected_menu_option = input('''
+                         Please select an option: ''')
         if selected_menu_option == '1':
             os.system('clear')
             difficulty_selection()
@@ -81,7 +81,6 @@ def start_menu():
             exit()
             return False
         else:
-            print()
             validate_menu_selection(selected_menu_option)
 
 
@@ -94,11 +93,11 @@ def validate_menu_selection(user_input):
     try:
         int_user_input = int(user_input)
         if int_user_input > 3:
-            print(
-                f"             {RED}Please enter a number provided, '{user_input}' is not an option.\n"
-            )
+            print(f"""
+                 {RED}Enter numbers above, '{user_input}' is not an option.""")
     except ValueError:
-        print(f"           {RED}Invalid selection, please try again by choosing a number.\n")
+        print(f"""
+           {RED}Invalid selection, please try again by choosing a number.""")
         return False
 
     return True
@@ -127,10 +126,11 @@ def difficulty_selection():
     center_print(24, f"{BLU}|                           |")
     center_print(24, f"{BLU}|        {RES}Start Menu: 4      {BLU}|")
     center_print(24, f"{BLU}|                           |")
-    center_print(24, f"{BLU}+---------------------------+\n")
+    center_print(24, f"{BLU}+---------------------------+")
 
     while True:
-        selected_difficulty_option = input("                        Please select an option: ")
+        selected_difficulty_option = input('''
+                         Please select an option: ''')
         if selected_difficulty_option == '1':
             os.system('clear')
             selected_word_difficulty = easy_words_list
@@ -148,7 +148,6 @@ def difficulty_selection():
             start_menu()
             return False
         else:
-            print()
             validate_menu_selection(selected_difficulty_option)
 
 
@@ -183,11 +182,11 @@ def display_game_rules():
             {BLU}|                                                  |
             {BLU}| {RES}- Best of luck, and watch your neck!             {BLU}|
             {BLU}|                                                  |
-            {BLU}+--------------------------------------------------+
-    ''')
+            {BLU}+--------------------------------------------------+''')
 
     while True:
-        selected_rules_menu_option = input("                  Press Enter to return to Start Menu...")
+        selected_rules_menu_option = input("""
+                  Press Enter to return to Start Menu...""")
         if selected_rules_menu_option == '':
             os.system('clear')
             start_menu()
@@ -195,7 +194,6 @@ def display_game_rules():
         else:
             print()
             print(f"                                {RED}Invalid input!")
-            print()
 
 
 def select_word(chosen_list):
@@ -207,27 +205,29 @@ def select_word(chosen_list):
     return selected_word.upper()
 
 
-def display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count):
+def display_game_info(hidden_word, letters_guessed,
+                      words_guessed, attempt_count):
     """
     Displays constantly updating game information to the user,
     """
-    print("       +-------------------------------------------------------------+")
+    print("""
+       +-------------------------------------------------------------+""")
     print(display_hangman(attempt_count))
     print()
-    print(f"                                {hidden_word}")
+    center_print(32, f"{hidden_word}")
     print()
-    print(f"                       Guessed letters: {', '.join(letters_guessed)}")
+    center_print(23, f"Guessed letters: {', '.join(letters_guessed)}")
     print()
-    print(f"                       Guessed words: {', '.join(words_guessed)}")
-    print()
+    center_print(23, f"Guessed words: {', '.join(words_guessed)}")
 
 
 def play_game(word):
     """
     Handles main game functionality and logic. 'Word' parameter is the
-    chosen word from the select_word funtion. Runs a while loop to check user inputs.
-    Based on user input custom outputs are shown. While loop will continously ask for
-    input until user runs out of tries or guesses correct word.
+    chosen word from the select_word funtion. Runs a while loop to
+    check user inputs. Based on user input custom outputs are shown.
+    While loop will continously ask for input until user runs out of
+    tries or guesses correct word.
     """
 
     # Adds spaces between underscores to see word length easier
@@ -237,37 +237,46 @@ def play_game(word):
     words_guessed = set()
     attempt_count = 6
 
-    display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
+    display_game_info(hidden_word, letters_guessed,
+                      words_guessed, attempt_count)
 
     while not guessed and attempt_count > 0:
-        user_guess = input("                       Please guess a letter or word: ").upper()
+        user_guess = input("""
+                       Please guess a letter or word: """).upper()
         # Handling single letter input
         if len(user_guess) == 1 and user_guess.isalpha():
             if user_guess in letters_guessed:
                 os.system('clear')
-                print("       +-------------------------------------------------------------+")
-                print(f"                 {RED}You have already guessed {user_guess}. Please try again!")
+                print("""
+       +-------------------------------------------------------------+""")
+                print(f"""
+                 {RED}You have already guessed {user_guess}. Try again!""")
             elif user_guess not in word:
                 os.system('clear')
-                print("       +-------------------------------------------------------------+")
-                print(f"                 {RED}'{user_guess}' is not in this word. Please try again!")
+                print("""
+       +-------------------------------------------------------------+""")
+                print(f"""
+                 {RED}'{user_guess}' is not in this word. Please try again!""")
                 attempt_count -= 1
                 letters_guessed.add(user_guess)
             else:
                 os.system('clear')
-                print("       +-------------------------------------------------------------+")
-                print(f"                        {GRE}Well done! {user_guess} is in the word!")
+                print("""
+       +-------------------------------------------------------------+""")
+                print(f"""
+                        {GRE}Well done! {user_guess} is in the word!""")
                 letters_guessed.add(user_guess)
 
                 # Replaces letters in the hidden word
                 hidden_word_as_list = list(hidden_word)
-                indices = [i for i, letter in enumerate(word) if letter == user_guess]
+                indices = [
+                    i for i, letter in enumerate(word) if letter == user_guess]
                 for index in indices:
                     # Index multiplied by 2 to account for additional spaces
                     hidden_word_as_list[index * 2] = user_guess
                 hidden_word = "".join(hidden_word_as_list)
 
-                # If no underscores left in the word, user has guessed correctly
+                # If no underscores are left, user has guessed correctly
                 if "_" not in hidden_word:
                     guessed = True
 
@@ -275,12 +284,16 @@ def play_game(word):
         elif len(user_guess) == len(word) and user_guess.isalpha():
             if user_guess in words_guessed:
                 os.system('clear')
-                print("       +-------------------------------------------------------------+")
-                print(f"                 {RED}You have already guessed {user_guess}. Please try again!")
+                print("""
+       +-------------------------------------------------------------+""")
+                print(f"""
+                 {RED}You have already guessed {user_guess}. Try again!""")
             elif user_guess != word:
                 os.system('clear')
-                print("       +-------------------------------------------------------------+")
-                print(f"                      {RED}{user_guess} is not the correct word!")
+                print("""
+       +-------------------------------------------------------------+""")
+                print(f"""
+                      {RED}{user_guess} is not the correct word!""")
                 attempt_count -= 1
                 words_guessed.add(user_guess)
             else:
@@ -288,27 +301,28 @@ def play_game(word):
                 hidden_word = word
         else:
             os.system('clear')
-            print("       +-------------------------------------------------------------+")
-            print(f"                      {RED}Invalid guess. Please try again!")
-        display_game_info(hidden_word, letters_guessed, words_guessed, attempt_count)
+            print("""
+       +-------------------------------------------------------------+""")
+            print(f"""
+                      {RED}Invalid guess. Please try again!""")
+        display_game_info(hidden_word, letters_guessed,
+                          words_guessed, attempt_count)
 
     # Output for WIN case
     if guessed:
         os.system('clear')
         display_game_over_win()
-        print(' ')
         display_win()
-        print()
-        print(f"      {GRE}Congratulations, the word was {YEL}{word}{GRE}. You guessed correctly!.")
-    
+        print(f"""
+                {GRE}The word was {YEL}{word}{GRE}. You guessed correctly!""")
+
     # Output for LOSE case
     else:
         os.system('clear')
         display_game_over_lose()
-        print(' ')
         display_lose()
-        print()
-        print(f"      {RED}You ran out of attempts. The word was {YEL}{word}{RED}. Try again next time!")
+        print(f"""
+                   {RED}The word was {YEL}{word}{RED}. Try again next time!""")
 
 
 def display_hangman(attempt_count):
@@ -379,8 +393,8 @@ def end_game():
     """
     while True:
         word = select_word(selected_word_difficulty)
-        print()
-        end_game_input = input("                             Play Again? (Y/N): ").upper()
+        end_game_input = input("""
+                             Play Again? (Y/N): """).upper()
         if end_game_input == "Y":
             os.system('clear')
             play_game(word)
@@ -388,8 +402,8 @@ def end_game():
             os.system('clear')
             main()
         else:
-            print()
-            print(f"                        {RED}Please select a valid option!")
+            print(f"""
+                        {RED}Please select a valid option!""")
 
 
 def display_game_over_lose():
@@ -398,7 +412,7 @@ def display_game_over_lose():
     """
     print()
     print(f'''{RED}
-   ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗ 
+   ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗
   ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗
   ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝
   ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
@@ -411,14 +425,13 @@ def display_lose():
     """
     Output for loss screen
     """
-    print(
-f'''{RED}       ██╗   ██╗ ██████╗ ██╗   ██╗    ██╗      ██████╗ ███████╗███████╗
+    print(f'''{RED}
+       ██╗   ██╗ ██████╗ ██╗   ██╗    ██╗      ██████╗ ███████╗███████╗
        ╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║     ██╔═══██╗██╔════╝██╔════╝
-        ╚████╔╝ ██║   ██║██║   ██║    ██║     ██║   ██║███████╗█████╗ 
-         ╚██╔╝  ██║   ██║██║   ██║    ██║     ██║   ██║╚════██║██╔══╝  
+        ╚████╔╝ ██║   ██║██║   ██║    ██║     ██║   ██║███████╗█████╗
+         ╚██╔╝  ██║   ██║██║   ██║    ██║     ██║   ██║╚════██║██╔══╝
           ██║   ╚██████╔╝╚██████╔╝    ███████╗╚██████╔╝███████║███████╗
-          ╚═╝    ╚═════╝  ╚═════╝     ╚══════╝ ╚═════╝ ╚══════╝╚══════╝
-    ''')
+          ╚═╝    ╚═════╝  ╚═════╝     ╚══════╝ ╚═════╝ ╚══════╝╚══════╝''')
 
 
 def display_game_over_win():
@@ -427,7 +440,7 @@ def display_game_over_win():
     """
     print()
     print(f'''{GRE}
-   ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗ 
+   ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗
   ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗
   ██║  ███╗███████║██╔████╔██║█████╗      ██║   ██║██║   ██║█████╗  ██████╔╝
   ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝      ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
@@ -440,14 +453,14 @@ def display_win():
     """
     Output for win screen
     """
-    print(
-f'''{GRE}             ██╗   ██╗ ██████╗ ██╗   ██╗    ██╗    ██╗██╗███╗   ██╗
+    print(f'''{GRE}
+             ██╗   ██╗ ██████╗ ██╗   ██╗    ██╗    ██╗██╗███╗   ██╗
              ╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║    ██║██║████╗  ██║
               ╚████╔╝ ██║   ██║██║   ██║    ██║ █╗ ██║██║██╔██╗ ██║
                ╚██╔╝  ██║   ██║██║   ██║    ██║███╗██║██║██║╚██╗██║
                 ██║   ╚██████╔╝╚██████╔╝    ╚███╔███╔╝██║██║ ╚████║
-                ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝
-    ''')
+                ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝''')
+
 
 def main():
     global selected_word_difficulty
@@ -457,4 +470,4 @@ def main():
     end_game()
 
 
-/
+main()
