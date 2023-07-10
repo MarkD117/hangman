@@ -274,7 +274,7 @@ Through testing, mobile browsers are not Compatible and will not run the program
 | Word Feedback | Guess incorrect word | Incorrect word message displayed | pass
 | Word Feedback | Guess same word | Same word message displayed & word not added to set twice | pass
 
-**Input Validation**
+**Main Game Input Validation**
 
 | Item | Test | Expected Outcome | Result | 
 |--|--|--|--|
@@ -301,3 +301,87 @@ Through testing, mobile browsers are not Compatible and will not run the program
 | Validate incorrect string | Enter string | Display invalid input message | pass
 | Validate Whitespace Input | Enter whitespace | Display invalid input message | pass
 | Validate Empty Input | Press 'Enter' | Display invalid input message | pass
+
+
+## Bug Fixes
+
+### Validation Issues
+
+When inputting the code into the python linter, there was a plethora of errors, most being an easy fix such as trailing whitespace and expection of blank lines. That said, there were multiple `E501` errors detailing each line of code that was too long.
+
+This led to a full redesign of all graphical outputs within the program. This was an personal oversight and learning experience on my end. To comply with PEP8 standards, I used a center-print() function to add spaces to the beginning of strings without having to add extra characters. I also assigned each colour tag to shorter variables to save space.
+
+These additions, along with use of docstrings allowed me to redesign the menus, text elements and ASCII art in compliance with PEP8 standards. This is something that will not be overlooked in the future. Below is is the center-print() funtion and colour variables used to solve these issues.
+
+<p align="center">
+    <img src="documentation/code-validation-errors.png"/>
+    <img src="documentation/center-print-function.png"/>
+    <img src="documentation/colour-variables.png"/>
+</p>
+
+### Replacing Letters In Hidden Word
+
+The idea of adding spaces between the hidden word underscores is the clearly show how many letters are in the word. When implementing spaces inbetween the hidden word, there was a bug that caused some of the underscores to not get replaced.When guessing the entire word, the underscores that should correspond to correctly guessed letters are not being replaced. 
+
+By multiplying the index by 2, we can account for the additional spaces between the underscores in the hidden word. This way, when a correct letter is guessed, the corresponding underscore and space will be replaced by the letter. Implementing this fix solved the issue and the underscores were being replaced correctly
+
+**Bug**
+<p align="center">
+    <img src="documentation/underscore-bug.png"/>
+</p>
+
+**Fixed Code**
+<p align="center">
+    <img src="documentation/replacing-letters-bug-fix.png"/>
+</p>
+
+### Words List Format
+
+When the words list was first imported, there was over 1000+ words on a single line. Instead of formatting them manually, I wrote two loops. The first loop printed all list elements in the correct format on separate lines. The list contained some invalid words such as words with dashes inbetween or words with spaces. The second loop found each of these invalid words which allowed for them to be removed quickly.
+
+**Initial List**
+<p align="center">
+    <img src="documentation/initial-words-list.png"/>
+</p>
+
+**Format Loop**
+<p align="center">
+    <img src="documentation/format-loop.png"/>
+</p>
+
+**Invalid Words Loop**
+<p align="center">
+    <img src="documentation/invalid-words-loop.png"/>
+</p>
+
+### Hidden Word Not Updating
+
+Throughout the testing process, I uncovered two very specific bugs. The first bug caused the hidden word to not update after replaying the same difficulty quiz twice. If you play the game and decide to play again, the game will choose a different word for you to guess. If you replayed that same quiz again, without restarting, the hidden word would stay the same for all replays after that point. 
+
+After some investigation, I found that the issue was caused due to the word selection function being called outside of the while loop in the `end_game()` function. This caused the word to not reset after the second replay. 
+
+**Bugged Code**
+<p align="center">
+    <img src="documentation/updating-word-bug.png"/>
+</p>
+
+**Fixed Code**
+<p align="center">
+    <img src="documentation/updating-word-bug-fix.png"/>
+</p>
+
+### Difficulty Not Resetting
+
+The second bug caused the difficulty to not reset when going back to the main menu after finishing the game. If the player decides to play the game again and choose a new difficulty, the newly selected difficulty will only take effect after they have replayed the same game. Looking back through the code I knew there was an issue when the player chooses to go back to the start menu.
+
+I found that when not replaying the game, the `start_menu()` and `play_game()` functions were called. This completely skipped the `select_word(chosen_list)` function which only updated after the second playing of the game. The fix for this was to call the main function within the end game function to ensure that all parts of the program were executed correctly updating the difficulty thus showing the correct word length.
+
+**Bugged Code**
+<p align="center">
+    <img src="documentation/difficulty-not-resetting-bug.png"/>
+</p>
+
+**Fixed Code**
+<p align="center">
+    <img src="documentation/difficulty-not-resetting-fix.png"/>
+</p>
