@@ -9,6 +9,20 @@ The live project can be accessed [here](https://hangman-md-95d75375f313.herokuap
     <img src="documentation/start-menu-screen.png"/>
 </p>
 
+## Index – Table of Contents
+
+* [UI/UX](#UI/UX)
+* [User Stores](#user-stories)
+* [Flowchart](#Flowchart)
+* [Features](#features)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Bug Fixes](#bug-fixes)
+* [Known Bugs](#known-bugs)
+* [Deployment](#deployment)
+* [Credits](#credits)
+* [Acknowledgements](#acknowledgements)
+
 ## UI/UX
 
 ### Design Overview
