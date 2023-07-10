@@ -18,7 +18,7 @@ The game was ultimately designed to be interesting to look at as well as intuiti
 [Colorama](https://pypi.org/project/colorama/) was used to apply colour to the text in the terminal. Colours were used to make the program more visually appealing more to give innate meanings to particular sections of the code.
 
 **Colours Used**
-- Inputs are displayed in white, this is due to white having the least confict and is easy to read.
+- Inputs are displayed in white; this is due to white having the least conflict and is easy to read.
 - Menu borders are displayed in Cyan.
 - Menu headings are displayed in Yellow.
 - Errors are displayed in Red.
@@ -36,7 +36,7 @@ The game was ultimately designed to be interesting to look at as well as intuiti
 
 ## Flowchart
 
-During the planning stages of this project, [Smartdraw](https://cloud.smartdraw.com/) was used to design the below flochart in order to plan the logic of program.
+During the planning stages of this project, [Smartdraw](https://cloud.smartdraw.com/) was used to design the below flowchart in order to plan the logic of program.
 
 Throughout the development of the project, some new functions and display cases have been added; however, the base game functionality/logic has stayed quite similar to the initial idea.
 
@@ -65,7 +65,7 @@ The 'Play Game' option will bring the user to the difficulty menu, the 'Game Rul
 
 ### Rules Menu
 
-If the user enters 2 in the start menu selection, the rules menu will display. This menu explains in detail how to play the game of hangman and how the different difficultys work. The user will also be prompted to press 'Enter' to return to the start menu. Again, in the event that the user does not enter the correct information, the program will display an error message telling them that their input is invalid.
+If the user enters 2 in the start menu selection, the rules menu will display. This menu explains in detail how to play the game of hangman and how the different difficulties work. The user will also be prompted to press 'Enter' to return to the start menu. Again, in the event that the user does not enter the correct information, the program will display an error message telling them that their input is invalid.
 
 <p align="center">
     <img src="documentation/rules-menu.png"/>
@@ -119,7 +119,7 @@ Throughout the guessing process, each guessed word and letter will be tracked an
 
 ### Guess Feedback
 
-Upon each guess, the program will output specific messages based on what the user has input. These include; telling the user if their guess is or is not in the word, if they have aready guessed a particular word or letter or if their guess is invalid. Invalid guesses can be caused by entering a number or a word with a different length than the chosen word.
+Upon each guess, the program will output specific messages based on what the user has input. These include; telling the user if their guess is or is not in the word, if they have already guessed a particular word or letter or if their guess is invalid. Invalid guesses can be caused by entering a number or a word with a different length than the chosen word.
 
 <p align="center">
     <img src="documentation/guess-not-in-word.png"/>
@@ -151,7 +151,7 @@ If the user does not want to play again by entering 'N', they will be returned t
 
 ### Score system
 
-- A future feature I would be keen to add is a score system. For each correctly guessed letter, the player could gain a set amount of score, for example, 25 points. If they guessed the word at the end of the game they could gain 100 points. If a user guesses the full word they could recieve even more bonus points as it is the hardest to accomplish. The harder the difficulty, the more points you gain. The users total points will be displayed at the end of the game.
+- A future feature I would be keen to add is a score system. For each correctly guessed letter, the player could gain a set amount of score, for example, 25 points. If they guessed the word at the end of the game, they could gain 100 points. If a user guesses the full word, they could receive even more bonus points as it is the hardest to accomplish. The harder the difficulty, the more points you gain. The users total points will be displayed at the end of the game.
 
 ### Storing The User Score
 
@@ -167,7 +167,7 @@ If the user does not want to play again by entering 'N', they will be returned t
 - [Python3](https://en.wikipedia.org/wiki/Python_(programming_language)) was used to create all game content and logic.
 - [Random](https://docs.python.org/3/library/random.html) python library used to select a random word from a list.
 - [OS](https://docs.python.org/3/library/os.html) python library used to clear the terminal.
-- [Colorama](https://pypi.org/project/colorama/) used to apply color to all terminal text.
+- [Colorama](https://pypi.org/project/colorama/) used to apply colour to all terminal text.
 - [Git](https://www.atlassian.com/git/tutorials/what-is-git) used for version control.
 - [GitHub](https://github.com/) used to store game source code.
 - [GitPod](https://gitpod.io/) used as a cloud-based IDE for developing the game.
@@ -203,10 +203,10 @@ Through testing, mobile browsers are not Compatible and will not run the program
 
 | Story No. | Feature Developed | Criteria Met 
 |--|--|--|
-| 1 | The start menu clearly outlines the sites purpose in the main heading. In the event that the user does not know what 'Hangman' is, the 'Play Game' option immediately signafies to the user that this program is a game allowing them to decide whether they would like to use it or not. | Pass | 
+| 1 | The start menu clearly outlines the sites purpose in the main heading. In the event that the user does not know what 'Hangman' is, the 'Play Game' option immediately signifies to the user that this program is a game allowing them to decide whether they would like to use it or not. | Pass | 
 | 2 | Rules menu developed to explain to the user exactly how to play the game. | Pass | 
 | 3 | All options are clearly labelled and have descriptive names. If the user enters invalid information, error messages will be shown pointing them in the right direction. Navigation is built to be intuitive and easy to understand. | Pass | 
-| 4 | Each input message is clear and descriptive when prompting the user for information. Again there are error messages in case users enter incorrect information.  | Pass | 
+| 4 | Each input message is clear and descriptive when prompting the user for information. Again, there are error messages in case users enter incorrect information.  | Pass | 
 | 5 | The game is built with varying levels of difficulty which will test the players knowledge indefinitely. Feedback is presented in the form of the custom messages, tracking guesses and updating game stages. | Pass | 
 
 ### Testing and Results
@@ -307,11 +307,11 @@ Through testing, mobile browsers are not Compatible and will not run the program
 
 ### Validation Issues
 
-When inputting the code into the python linter, there was a plethora of errors, most being an easy fix such as trailing whitespace and expection of blank lines. That said, there were multiple `E501` errors detailing each line of code that was too long.
+When inputting the code into the python linter, there was a plethora of errors, most being an easy fix such as trailing whitespace and expectation of blank lines. That said, there were multiple `E501` errors detailing each line of code that was too long.
 
 This led to a full redesign of all graphical outputs within the program. This was an personal oversight and learning experience on my end. To comply with PEP8 standards, I used a center-print() function to add spaces to the beginning of strings without having to add extra characters. I also assigned each colour tag to shorter variables to save space.
 
-These additions, along with use of docstrings allowed me to redesign the menus, text elements and ASCII art in compliance with PEP8 standards. This is something that will not be overlooked in the future. Below is is the center-print() funtion and colour variables used to solve these issues.
+These additions, along with use of docstrings allowed me to redesign the menus, text elements and ASCII art in compliance with PEP8 standards. This is something that will not be overlooked in the future. Below is the center-print() function and colour variables used to solve these issues.
 
 <p align="center">
     <img src="documentation/code-validation-errors.png"/>
@@ -321,7 +321,7 @@ These additions, along with use of docstrings allowed me to redesign the menus, 
 
 ### Replacing Letters In Hidden Word
 
-The idea of adding spaces between the hidden word underscores is the clearly show how many letters are in the word. When implementing spaces inbetween the hidden word, there was a bug that caused some of the underscores to not get replaced.When guessing the entire word, the underscores that should correspond to correctly guessed letters are not being replaced. 
+The idea of adding spaces between the hidden word underscores is the clearly show how many letters are in the word. When implementing spaces in-between the hidden word, there was a bug that caused some of the underscores to not get replaced. When guessing the entire word, the underscores that should correspond to correctly guessed letters are not being replaced. 
 
 By multiplying the index by 2, we can account for the additional spaces between the underscores in the hidden word. This way, when a correct letter is guessed, the corresponding underscore and space will be replaced by the letter. Implementing this fix solved the issue and the underscores were being replaced correctly
 
@@ -337,7 +337,7 @@ By multiplying the index by 2, we can account for the additional spaces between 
 
 ### Words List Format
 
-When the words list was first imported, there was over 1000+ words on a single line. Instead of formatting them manually, I wrote two loops. The first loop printed all list elements in the correct format on separate lines. The list contained some invalid words such as words with dashes inbetween or words with spaces. The second loop found each of these invalid words which allowed for them to be removed quickly.
+When the words list was first imported, there was over 1000+ words on a single line. Instead of formatting them manually, I wrote two loops. The first loop printed all list elements in the correct format on separate lines. The list contained some invalid words such as words with dashes in-between or words with spaces. The second loop found each of these invalid words which allowed for them to be removed quickly.
 
 **Initial List**
 <p align="center">
@@ -419,9 +419,9 @@ The program was deployed using [Heroku](https://id.heroku.com/) by following the
 | [CBT Nuggets](https://www.youtube.com/watch?v=JNXmCOumNw0&t) | Game Design | Inspiration on games design |
 | [Shaun Halverson](https://www.youtube.com/watch?v=pFvSb7cb_Us&t) | Spaces & Underscores | Inspiration for adding spaces between underscores |
 | [Kylie Ying](https://www.youtube.com/watch?v=cJJTnI22IF8&t) | Words List | Source for primary words list |
-| [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w&t) | Main Game Logic | Inspiration for main game logic & Revealing hidden word |
+| [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w&t) | Main Game Logic | Inspiration for main game logic & revealing hidden word |
 | [Geeks For Geeks](https://www.geeksforgeeks.org/clear-screen-python/) | OS Library | clearing the terminal |
-| [Geeks For Geeks](https://www.geeksforgeeks.org/python-sets/) | Sets | Outputing elements from sets |
+| [Geeks For Geeks](https://www.geeksforgeeks.org/python-sets/) | Sets | Outputting elements from sets |
 | [Towards Data Science](https://towardsdatascience.com/3-reasons-to-use-sets-over-lists-82b36980c9fd) | Sets | Using sets to store data over lists  |
 | [Borislav Hadzhiev](https://bobbyhadz.com/blog/python-remove-elements-from-list-based-on-condition) | Difficulty Lists | Remove elements from a List based on a condition in Python |
 | [Readme.so](https://readme.so/) | Markdown | Tool used for visualising creating and visualising readme content |
