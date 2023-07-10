@@ -409,3 +409,19 @@ The program was deployed using [Heroku](https://id.heroku.com/) by following the
 - Go to "Connect to GitHub" section and **Search the Repository** to be deployed.
 - Click **Connect** next the repository name.
 - Choose **Automatic deploys** or **Manual deploys** to deploy your application.
+
+## Credits
+
+| Source | Item | Notes |
+| --- | --- | --- |
+| [Chris Horton](https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c) | Hangman ASCII Art | Inspiration for hangman ASCII art |
+| [Tech With Tim](https://www.youtube.com/watch?v=u51Zjlnui4Y) | Colorama | Understanding Colorama |
+| [CBT Nuggets](https://www.youtube.com/watch?v=JNXmCOumNw0&t) | Game Design | Inspiration on games design |
+| [Shaun Halverson](https://www.youtube.com/watch?v=pFvSb7cb_Us&t) | Spaces & Underscores | Inspiration for adding spaces between underscores |
+| [Kylie Ying](https://www.youtube.com/watch?v=cJJTnI22IF8&t) | Words List | Source for primary words list |
+| [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w&t) | Main Game Logic | Inspiration for main game logic & Revealing hidden word |
+| [Geeks For Geeks](https://www.geeksforgeeks.org/clear-screen-python/) | OS Library | clearing the terminal |
+| [Geeks For Geeks](https://www.geeksforgeeks.org/python-sets/) | Sets | Outputing elements from sets |
+| [Towards Data Science](https://towardsdatascience.com/3-reasons-to-use-sets-over-lists-82b36980c9fd) | Sets | Using sets to store data over lists  |
+| [Borislav Hadzhiev](https://bobbyhadz.com/blog/python-remove-elements-from-list-based-on-condition) | Difficulty Lists | Remove elements from a List based on a condition in Python |
+| [Readme.so](https://readme.so/) | Markdown | Tool used for visualising creating and visualising readme content |
