@@ -12,7 +12,7 @@ The live project can be accessed [here](https://hangman-md-95d75375f313.herokuap
 ## Index – Table of Contents
 
 * [UI/UX](#UIUX)
-* [User Stores](#user-stories)
+* [User Stories](#user-stories)
 * [Flowchart](#Flowchart)
 * [Features](#features)
 * [Technologies Used](#technologies-used)
