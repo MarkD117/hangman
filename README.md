@@ -48,6 +48,8 @@ The game was ultimately designed to be interesting to look at as well as intuiti
 4. As a new site user, I'd like to easily understand what input is needed on each step.
 5. As a new site user, I'd like the game to test my knowledge and give me feedback on my progress.
 
+    [Validating User Stories](#validating-user-stories)
+
 ## Flowchart
 
 During the planning stages of this project, [Smartdraw](https://cloud.smartdraw.com/) was used to design the below flowchart in order to plan the logic of program.
