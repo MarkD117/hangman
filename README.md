@@ -425,3 +425,9 @@ The program was deployed using [Heroku](https://id.heroku.com/) by following the
 | [Towards Data Science](https://towardsdatascience.com/3-reasons-to-use-sets-over-lists-82b36980c9fd) | Sets | Using sets to store data over lists  |
 | [Borislav Hadzhiev](https://bobbyhadz.com/blog/python-remove-elements-from-list-based-on-condition) | Difficulty Lists | Remove elements from a List based on a condition in Python |
 | [Readme.so](https://readme.so/) | Markdown | Tool used for visualising creating and visualising readme content |
+
+## Acknowledgements 
+
+I would like to thank my mentor Marcel Mulders for all of his help and assistance. I would also like my cohort mentor Alan Bushell, the Code Institute team and the Slack community.  
+
+[Back to top ⇧](#hangman)
